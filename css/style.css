@@ -131,7 +131,7 @@ body {
 
 .main-button:hover{
     transform: scale(1.05);
-    box-shadow: 0 0 12px rgba(88,166,255,0.5);
+    box-shadow: 0 0 12px #58a6ff80;
     background: var(--hover-button);
     transition: .3s;
 }
@@ -171,11 +171,42 @@ img {
 
 .about-button:hover{
     background: var(--hover-button);
-    box-shadow: 0 0 12px rgba(88,166,255,0.5);
+    box-shadow: 0 0 12px #58a6ff80;
     transition: .4s;
 }
 
 /* END ABOUT */
+
+
+/* SKILLS */
+
+
+.container-skills{
+    flex-wrap: wrap;
+}
+
+.card-skill{
+    background: var(--white);
+}
+
+.card-skill:hover {
+    box-shadow: 0 8px 20px #58a6ff4d;
+    transform: scale(1.05);
+    transition: .3s;
+}
+
+
+
+
+
+
+
+.skill-logo{
+    max-width: 135px;
+    max-height: 135px;
+}
+
+/* END SKILLS */
 
 
 
