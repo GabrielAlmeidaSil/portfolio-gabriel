@@ -196,11 +196,6 @@ img {
 }
 
 
-
-
-
-
-
 .skill-logo{
     max-width: 135px;
     max-height: 135px;
@@ -209,7 +204,78 @@ img {
 /* END SKILLS */
 
 
+/* PROJECTS */
 
+.projects{
+    background: var(--bg-body-interleaved);
+}
+
+.card{
+    background: var(--bg-body-interleaved);
+    border: 2px solid var(--white);
+    color: var(--white);
+    font-family: var(--paragraphs);
+
+    border: none;
+    border-top: 3px solid #0d6efd;
+    background-color: #1b1b1d;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+
+.card:hover{
+  box-shadow: 0 12px 25px #e0e0e066;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+.card-img-skill{
+    width: 50px;
+    height: 50px;
+    background: #1e1e1e;
+    border-radius: 6px;
+    padding: 6px;
+    margin: 2px;
+    border: 1px solid #ffffff1a;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card-img-skill:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+
+.btn-projects-p{
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-projects-p:hover{
+    box-shadow: 0 8px 16px #0d6efd66;
+    transform: translateY(-2px);
+    background: var(--bg-body);
+}
+
+.btn-projects-c{
+    background-color: #0d6dfd;
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-projects-c:hover{
+    box-shadow: 0 8px 16px #0d6efd66;
+    transform: translateY(-2px);
+    background: var(--bg-body);
+}
+
+/* PROJECTS */
 
 
 
