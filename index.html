@@ -1,574 +1,399 @@
 <!DOCTYPE html>
-<html lang="pt-br" data-theme="dark"> <!-- Tema padrão do site é dark -->
+<html lang="pt-br" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Gabriel</title>
 
-    <meta name="keywords"
-        content="Gabriel, Almeida, Gabriel Almeida, portfolio, portfolio gabriel almeida, Desenvolvedor, Desenvolvedor front-end, projetos, galeria, sobre mim, contato">
-    <!-- Colocar palavras chaves do site pra os motores de buscar dar mais visibilidade para o site -->
 
-    <meta name="description" content="Soluções Criativas & Desenvolvimento Front-End.">
-    <!-- Descrição do site, podendo ser alguma que esta dentro do nosso site -->
-    <meta name="robots" content="index, follow">
 
-    <title>Gabriel Almeida | Portfolio</title>
+    <!-- Import Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <!-- Import Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Import CSS -->
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Fav Icon -->
-    <link rel="shortcut icon" href="img/favicon-portfolio.png" type="image/x-icon">
-
-    <!-- BootStrap Icons-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-    <!--Cabeçalho-->
-    <header id="header">
-        <!-- Menu desktop-->
-        <nav class="header-nav">
-            <ul class="menu menu-principal">
-                <li class="menu-item">
-                    <a href="#home" class="menu-link active">
-                        <span class="menu-texto">HOME</span>
-                    </a>
-                </li>
+    <!-- HEADER -->
 
-                <li class="menu-item">
-                    <a href="#projetos" class="menu-link">
-                        <span class="menu-texto">PROJETOS</span>
-                    </a>
-                </li>
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg position-relative px-3 py-3 "> <!-- py-sm-4 -->
+            <!-- button mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
+                aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <li class="menu-item">
-                    <a href="#sobre" class="menu-link">
-                        <span class="menu-texto">SOBRE</span>
-                    </a>
-                </li>
+            <!-- menu -->
+            <div class="collapse navbar-collapse py-1 py-lg-3" id="menuNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#inicio">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#about">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#projects">Projetos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
 
-                <li class="menu-item">
-                    <a href="#contato" class="menu-link">
-                        <span class="menu-texto">CONTATO</span>
-                    </a>
-                </li>
-            </ul>
+            <!-- icon moon -->
+            <div class="header-toggle me-3 fs-2">
+                <i id="toggleTheme" class="bi bi-sun"></i>
+            </div>
         </nav>
-
-        <!-- Logo -->
-        <div class="header-logo">
-            <a href="#home">
-                <img src="img/logo-P.png" alt="Letras G e A" class="logo">
-            </a>
-        </div>
-
-        <!-- Trocar cor tema -->
-        <div class="header-toggle">
-            <i id="toggleTheme" class="bi bi-sun"></i>
-        </div>
     </header>
-    <!-- Fim Cabeçalho desktop-->
 
-    <!-- Menu Mobile -->
+    <!-- END HEADER -->
 
-    <nav class="nav-mobile">
-        <ul class="menu menu-mobile">
-            <li class="menu-item">
-                <a href="#home" class="menu-link active">
-                    <i class="menu-icone bi bi-house-door"></i>
-                    <span class="menu-texto">
-                        HOME
-                    </span>
+
+    <!-- MAIN -->
+
+    <main class="main container my-5" id="inicio">
+    <div class="row d-flex align-items-center justify-content-center py-5">
+        <!-- info -->
+        <div class="info-left col-12 col-md-7">
+            <h1 class="left-h1 py-2 display-5">Gabriel Almeida</h1>
+            <h1 class="left-h1 display-2 mb-3">Desenvolvedor <br> Front-End</h1>
+            <h2>Transformando ideias em interfaces modernas e funcionais.</h2>
+
+            <!-- social -->
+            <div class="social py-4 d-flex gap-4 fs-3">
+                <a href="https://wa.me/+5511989738214" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://www.instagram.com/gbrlwx/" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/gabrielalmeidasilva/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/GabrielAlmeidaSil" target="_blank"><i class="bi bi-github"></i></a>
+            </div>
+
+            <div class="container-button py-4">
+                <a href="#projects" class="main-button rounded fs-2 py-3 px-5 fw-semibold">Ver projetos
+                    <i class="bi bi-search"></i>
                 </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="#projetos" class="menu-link">
-                    <i class="menu-icone bi bi-collection"></i>
-                    <!--  <i class="menu-icone bi-images"></i> -->
-                    <span class="menu-texto">
-                        PROJETOS
-                    </span>
-                </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="#sobre" class="menu-link">
-                    <i class="menu-icone bi bi-person-fill"></i>
-                    <span class="menu-texto">
-                        SOBRE
-                    </span>
-                </a>
-            </li>
-
-            <li class="menu-item">
-                <a href="#contato" class="menu-link">
-                    <i class="menu-icone bi bi-telephone-fill"></i>
-                    <span class="menu-texto">
-                        CONTATO
-                    </span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Fim Menu Mobile -->
-
-    <main id="home">
-        <div class="main-content">
-            <h1>
-                <b>Soluções Criativas &</b>
-                Desenvolvimento Front-End.
-
-                <p>Gabriel Almeida - SP, Desenvolvedor Front-End.</p>
-            </h1>
-
-            <!-- Redes Sociais -->
-            <ul class="menu menu-social">
-                <li>
-                    <a href="https://wa.me/+5511989738214" class="" target="_blank">
-                        <i class="menu-icone bi bi-whatsapp"></i>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="https://www.instagram.com/gbrlwx/" class="" target="_blank">
-                        <i class="menu-icone bi bi-instagram"></i>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="https://www.linkedin.com/in/gabrielalmeidasilva/" class="" target="_blank">
-                        <i class="menu-icone bi bi-linkedin"></i>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="https://github.com/GabrielAlmeidaSil" class="" target="_blank">
-                        <i class="menu-icone bi bi-github"></i>
-                    </a>
-                </li>
-            </ul>
-            <!-- Fim Redes Sociais -->
-
-            <!-- Botão Externo -->
-            <a href="#projetos">
-                <button class="btn btn-primary">
-                    <span>Ver Projetos</span>
-                    <i class="bi bi-arrow-down-right"></i>
-                </button>
-            </a>
-            <!-- Fim Botão Externo -->
+            </div>
         </div>
-        <!-- Fim Main Content -->
 
-        <!-- Video -->
-        <div class="video">
-            <iframe src="https://www.youtube.com/embed/HXYZxVbWkjc?si=5i3MWyhPZRLymtI7" title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <!-- img -->
+        <div class="col-12 col-md-5 mt-5">
+             <img src="img/myself/BackgroundEraser_20250625_192413146.png" alt="" class="img-fluid">
+            <!-- <img src="img/myself/img-main.png" alt="" class="img-fluid"> -->
+            <!-- <img src="img/myself/img-main.svg" alt="" class="img-fluid"> -->
         </div>
-        <!-- Fim Video -->
+    </div>
+</main>
 
-    </main>
+<!-- END MAIN -->
 
+<!-- ABOUT -->
 
-    <!-- PROJETOS -->
+<section class="about container-fluid py-4" id="about">
+    <div class="container">
+        <div class="row align-items-center gap-1">
+            <!-- left about -->
+            <div class="col-12 col-md-4">
+                <img src="img/myself/img-cortada-fundo.png" alt="" class="img-fluid">
+            </div>
 
-    <section id="projetos" class="projetos"> <!-- ID para navegarmos -->
-
-        <h2 data-aos="fade-down">Projetos</h2>
-        <div class="projeto-container">
-            <div class="projeto-card">
-
-                <img src="img/projetos/projeto-church.PNG" alt="imagem de um campo e uma bola de futebol"
-                    class="card-img" data-aos="zoom-in">
-
-
-                <div class="card-body">
-                    <h3 class="card-title" data-aos="fade-down" data-aos-delay="100">Church ✝📖</h3>
-                    <p class="card-descricao" data-aos="fade-up">
-                        O site da Church foi desenvolvido com HTML, CSS e Bootstrap 5. Ele é um projeto bem organizado e
-                        pensado para apresentar as principais informações da igreja de forma simples e visual.
-                        Ele conta com uma seção Sobre Nós, uma Agenda Semanal com datas e horários dos cultos, uma Loja
-                        com produtos da igreja e uma área de Eventos para divulgar programações especiais. O site é
-                        responsivo e pensado para facilitar o acesso às informações para a comunidade.
-                    </p>
-                    <p class="p-link" data-aos="fade-up" data-aos-delay="50">
-                        🔗 Acesse agora:
-                        <a href="https://gabrielalmeidasil.github.io/church-bootstrap/"
-                            target="_blank">https://gabrielalmeidasil.github.io/church-bootstrap/</a>
-                    </p>
-                </div>
-            </div> <!-- FIM PROJ 1 -->
-
-
-
-            <div class="projeto-card card-reverse">
-                <img src="img/projetos/projeto-praia.PNG" alt="imagem de um campo e uma bola de futebol"
-                    class="card-img" data-aos="zoom-in">
-
-                <div class="card-body">
-                    <h3 class="card-title" data-aos="fade-down" data-aos-delay="100">Agência de Viagens 🏝️☀️</h3>
-                    <p class="card-descricao" data-aos="fade-up">
-                        A Agência de Viagem é o seu portal exclusivo para quem ama praias e quer planejar a viagem
-                        perfeita! No nosso site, você encontra os melhores destinos litorâneos, com as praias mais
-                        visitadas, além de pacotes especiais de passagens aéreas e rodoviárias em parceria com as
-                        principais companhias. Também oferecemos dicas valiosas para tornar sua viagem mais segura e
-                        confortável. E se precisar de ajuda, nossa equipe está pronta para falar com você na área de
-                        contato. Planeje agora sua próxima viagem e aproveite o melhor do litoral!
-                    </p>
-                    <p class="p-link" data-aos="fade-up" data-aos-delay="50">
-                        🔗 Acesse agora:
-                        <a href="https://gabrielalmeidasil.github.io/agencia-viagem/"
-                            target="_blank">https://gabrielalmeidasil.github.io/agencia-viagem/</a>
-                    </p>
-
-                </div>
-            </div> <!-- FIM PROJ 2 -->
-
-
-
-            <div class="projeto-card">
-                <img src="img/projetos/projeto-cinema.PNG" alt="imagem de um campo e uma bola de futebol"
-                    class="card-img" data-aos="zoom-in">
-
-                <div class="card-body">
-                    <h3 class="card-title" data-aos="fade-down" data-aos-delay="100">Cineverso 🚀🎥</h3>
-                    <p class="card-descricao" data-aos="fade-up">
-                        Bem-vindo ao Cinoplex, o seu universo cinematográfico! Aqui, você fica por dentro de todos os
-                        filmes em cartaz, confere os próximos lançamentos que em breve estarão nas telonas e descobre
-                        nossos planos exclusivos, cheios de benefícios para os apaixonados por cinema. E, claro, não
-                        pode faltar aquele combo delicioso para acompanhar a sessão! Navegue pelo nosso site, escolha
-                        seu filme e viva a magia do cinema com a gente!
-                    </p>
-                    <p class="p-link" data-aos="fade-up" data-aos-delay="50">
-                        🔗 Acesse agora:
-                        <a href="https://gabrielalmeidasil.github.io/projeto-cinema/"
-                            target="_blank">https://gabrielalmeidasil.github.io/projeto-cinema/</a>
-                    </p>
-
-                </div>
-            </div> <!-- FIM PROJ 3 -->
-        </div>
-    </section>
-    <!-- FIM PROJETOS -->
-
-    <!-- SOBRE -->
-
-    <section id="sobre" class="sobre">
-        <div class="sobre-content1">
-            <img src="img/foto-perfil.jpg" alt="Minha foto de perfil" class="sobre-perfil" data-aos="fade-right">
-
-            <div class="sobre-descricao">
-                <h2 data-aos="fade-left">Sobre Mim</h2>
-                <p data-aos="fade-left" data-aos-delay="200">Olá, tudo bem? Me chamo Gabriel Almeida da Silva, tenho 19 anos e atualmente estou cursando Análise e
-                    Desenvolvimento de sistemas na UNIP, com previsão de término no final de 2025. Estou começando minha
-                    jornada de desenvolvimento front-end, a qual foi a área que eu mais me interessei, aprendendo HTML e
-                    CSS para criar páginas webs funcionais e bonitas.
-
-                    Meu próximo passo será aprender JavaScript, para tornar as páginas mais interativas e dinâmicas.
-                    Estou muito animado para aprender ainda mais sobre o universo do desenvolvimento web e crescer nessa
-                    área.
-
+            <!-- rigth about -->
+            <div class="col-12 col-md-7 mt-3">
+                <h1 class="fw-bold mt-4 display-5">Sobre mim</h1>
+                <p class="about-p fs-5 my-3">
+                    Olá, tudo bem? Me chamo Gabriel Almeida da Silva, tenho 19 anos e atualmente estou cursando
+                    Análise e Desenvolvimento de sistemas na UNIP, com previsão de término no final de 2025. Estou
+                    começando minha jornada de desenvolvimento front-end, a qual foi a área que eu mais me
+                    interessei, aprendendo HTML e CSS para criar páginas webs funcionais e bonitas. Meu próximo
+                    passo será aprender JavaScript, para tornar as páginas mais interativas e dinâmicas. Estou muito
+                    animado para aprender ainda mais sobre o universo do desenvolvimento web e crescer nessa área.
                     Desde criança, sempre gostei de unir criatividade e lógica, e acredito que o front-end é o lugar
                     perfeito para isso. Estou animado para amadurecer na área e desenvolver projetos que façam a
                     diferença, tanto pessoal quanto empressarial.
                 </p>
 
-                <div class="sobre-skills" data-aos="fade-left" data-aos-delay="100">
-                    <i class="bi bi-translate"></i>
-                    <span>Inglês: Intermediário</span>
+                <div class="my-info d-flex flex-column gap-4 rounded">
+                    <div class="mt-2 ms-2">
+                        <i class="bi bi-person"></i>
+                        <strong>Nome:</strong> Gabriel Almeida da Silva
+                    </div>
+
+                    <div class="ms-2">
+                        <i class="bi bi-geo-alt"></i>
+                        <strong>Cidade / Estado:</strong> Osasco, SP
+                    </div>
+
+                    <div class="ms-2">
+                        <i class="bi bi-envelope"></i>
+                        <strong>Email:</strong> gabriel.almesilva@gmail.com
+                    </div>
+
+                    <div class="mb-2 ms-2">
+                        <i class="bi bi-translate"></i>
+                        <strong>Inglês:</strong> Intermediário
+                    </div>
                 </div>
 
-                <div class="descricao-btn" data-aos="fade-left" data-aos-delay="300">
-                    <a href="https://www.linkedin.com/in/gabrielalmeidasilva/" target="_blank">
-                        <button class="btn btn-primary">
-
-                            <span>Conecte-se Comigo</span>
-
-                            <i class="bi bi-arrow-up-right"></i>
-
-                        </button>
+                <div class="container-button pt-5 pb-5">
+                    <a href="https://www.linkedin.com/in/gabrielalmeidasilva/" class="about-button rounded fs-2 py-3 px-4 fw-semibold" target="_blank">Conecte-se Comigo
+                        <i class="bi bi-arrow-up-right"></i>
                     </a>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
 
-        </div> <!-- FIM CONTENT 1 -->
+
+    <!-- END ABOUT -->
 
 
-        <div class="sobre-content2">
-            <div class="col1">
-                <div class="row1">
-                    <h3>Formação</h3>
+    <!-- SKILLS -->
 
-                    <h4>- Análise e Desenvolvimento de Sistemas</h4>
-                    <span>Fev 2024 - Dez 2025</span>
+    <section class="skills container-fluid my-5 py-5" id="skills">
+        <h1 class="text-center display-5 fw-bold">Skills</h1>
 
-                    <div class="sobre-icones">
-                        <i class="bi bi-bank"></i>
-                        <span>Unip</span>
+        <div class="container-skills container d-flex text-center mt-5 justify-content-around gap-4 mb-3">
+
+            <!-- card html -->
+            <div class="card-skill p-2 rounded">
+                <img src="img/skills/html.webp" alt="" class="skill-logo">
+
+                <h5 class="my-2">HTML</h5>
+                <p class="text-muted">87%</p>
+            </div>
+
+            <!-- card css -->
+            <div class="card-skill p-2 rounded">
+                <img src="img/skills/css.png" alt="" class="skill-logo">
+
+                <h5 class="my-2">CSS</h5>
+                <p class="text-muted">83%</p>
+            </div>
+
+            <!-- card js -->
+            <div class="card-skill p-2 rounded">
+                <img src="img/skills/js.webp" alt="" class="skill-logo">
+
+                <h5 class="my-2">JavaScript</h5>
+                <p class="text-muted">52%</p>
+            </div>
+
+            <!-- card bootstrap -->
+            <div class="card-skill p-2 rounded">
+                <img src="img/skills/bootstrap.png" alt="" class="skill-logo p-3">
+
+                <h5 class="my-2">BootStrap</h5>
+                <p class="text-muted">77%</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- END SKILLS -->
+
+
+
+    <!-- PROJECTS -->
+
+    <section class="projects container-fluid py-5" id="projects">
+        <div class="container py-5">
+            <h1 class="text-center display-5 fw-bold pb-5">Meus Projetos</h1>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gap-5 d-flex justify-content-center"> <!--  -->
+
+
+                <!-- Project 1 -->
+                <div class="card col-12 col-md-12 py-3" style="width: 21rem;">
+                    <span class="badge bg-dark mb-1">Projeto Pessoal – Julho, 2025</span>
+
+                    <img src="img/img-projects/project1.PNG" class="card-img-top pt-2 px-2" alt="...">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Meu Portfólio</h5>
+                        <p class="card-text">Site pessoal responsivo criado para apresentar minhas habilidades, projetos
+                            e contato profissional. Desenvolvido com foco em performance e experiência do usuário.
+                        </p>
+
+                        <div class="d-flex justify-content-between gap-1 pb-3">
+                            <img src="img/skills/html.webp" alt="" class="card-img-skill html-skill" title="HTML">
+                            <img src="img/skills/css.png" alt="" class="card-img-skill css-skill" title="CSS">
+                            <img src="img/skills/js.webp" alt="" class="card-img-skill js-skill" title="JavaScript">
+                            <img src="img/skills/bootstrap.png" alt="" class="card-img-skill boot-skill"
+                                title="BootStrap5">
+                        </div>
+
+                        <div class="mt-auto">
+                            <div class="container-btn-projects d-flex justify-content-between pt-1">
+                                <a href="#inicio" class="btn btn-projects-p">Ver Projeto
+                                    <i class="bi bi-link-45deg"></i>
+                                </a>
+                                <a href="#" class="btn btn-projects-c">Ver Código
+                                    <i class="bi bi-code-slash"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="sobre-icones">
-                        <i class="bi bi-mortarboard"></i>
-                        <span>Técnico</span>
-                    </div>
-
-                    <!-- Nova formação ingles-->
-
-                    <h4>- Inglês</h4>
-                    <span>Fev 2022 - Mar 2025</span>
-
-                    <div class="sobre-icones">
-                        <i class="bi bi-bank"></i>
-                        <span>Santa Rosa</span>
-                    </div>
-
-                    <div class="sobre-icones">
-                        <i class="bi bi-patch-check"></i>
-                        <span>Curso</span>
-                    </div>
-
-
-
-                    <!-- nova formação -->
-
-                    <h4>- Designer de Interface Web</h4>
-                    <span>Fev 2025 - Abr 2025</span>
-
-                    <div class="sobre-icones">
-                        <i class="bi bi-bank"></i>
-                        <span>SENAI</span>
-                    </div>
-
-                    <div class="sobre-icones">
-                        <i class="bi bi-patch-check"></i>
-                        <span>Técnico</span>
-                    </div>
-
-                </div> <!-- fim row1 -->
-
-                <div class="row2">
-                    <h3>Experiências</h3>
-
-                    <h4>Faturamento</h4>
-
-                    <span>Savencia. Mar 2025 - Atualmente</span>
-
-
-                    <ul class="sobre-lista">
-                        <li class="sobre-item">
-                            Trabalho Presencial
-                        </li>
-
-                        <li class="sobre-item">
-                            Curso Teórico Presencial/EAD (1 mês)
-                        </li>
-
-                    </ul>
                 </div>
+
+                <!-- Project 2 -->
+                <div class="card col-12 col-md-12 py-3" style="width: 21rem;">
+                    <span class="badge bg-dark mb-1">Projeto Pessoal – Maio, 2025</span>
+                    <img src="img/img-projects/project2.PNG" class="card-img-top pt-2 px-2" alt="...">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Projeto Church</h5>
+                        <p class="card-text">Página institucional fictícia para uma igreja, com design moderno,
+                            informações organizadas e estilo visual realista para simular um site profissional.
+                        </p>
+
+
+                        <div class="d-flex justify-content-between gap-1 pb-3">
+                            <img src="img/skills/html.webp" alt="" class="card-img-skill html-skill" title="HTML">
+                            <img src="img/skills/css.png" alt="" class="card-img-skill css-skill" title="CSS">
+                            <img src="img/skills/bootstrap.png" alt="" class="card-img-skill boot-skill"
+                                title="BootStrap5">
+                        </div>
+
+
+                        <div class="mt-auto">
+                            <div class="container-btn-projects d-flex justify-content-between">
+                                <a href="https://gabrielalmeidasil.github.io/church-bootstrap/" class="btn btn-projects-p" target="_blank">Ver Projeto
+                                    <i class="bi bi-link-45deg"></i>
+                                </a>
+                                <a href="https://github.com/GabrielAlmeidaSil/church-bootstrap" class="btn btn-projects-c" target="_blank">Ver Código
+                                    <i class="bi bi-code-slash"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="card col-12 col-md-12 py-3" style="width: 21rem;">
+                    <span class="badge bg-dark mb-1">Projeto Pessoal – Março, 2025</span>
+                    <img src="img/img-projects/project3.PNG" class="card-img-top pt-2 px-2" alt="...">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Projeto Cinema</h5>
+                        <p class="card-text">Website de um cinema fictício com sessões, filmes em cartaz e estilo visual
+                            inspirado em grandes redes. Trabalha bem identidade visual e responsividade.
+                        </p>
+
+                        <div class="d-flex justify-content-evenly gap-1 pb-3">
+                            <img src="img/skills/html.webp" alt="" class="card-img-skill html-skill" title="HTML">
+                            <img src="img/skills/css.png" alt="" class="card-img-skill css-skill" title="CSS">
+                        </div>
+
+                        <div class="mt-auto">
+                            <div class="container-btn-projects d-flex justify-content-between">
+                                <a href="https://gabrielalmeidasil.github.io/projeto-cinema/" class="btn btn-projects-p" target="_blank">Ver Projeto
+                                    <i class="bi bi-link-45deg"></i>
+                                </a>
+                                <a href="https://github.com/GabrielAlmeidaSil/projeto-cinema" class="btn btn-projects-c" target="_blank">Ver Código
+                                    <i class="bi bi-code-slash"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-
-            <div class="col2">
-                <h3>Cursos</h3>
-
-                <div class="accordion">
-                    <!-- Curso 1 -->
-                    <div class="accordion-item active">
-                        <button class="accordion-header start">
-                            <span>Inglês - <i>Santa Rosa</i></span>
-                            <i class="bi bi-caret-down-fill"></i>
-                        </button>
-
-                        <div class="accordion-body">
-                            <p>Santa Rosa. Fev 2022 - Mar 2025</p>
-                            <p>​Ao concluir o curso de inglês na Escola Santa Rosa, comecei no Book 2, onde aprendi
-                                vocabulário básico e estruturas gramaticais simples, permitindo-me formar frases do dia
-                                a dia. No Book 3, aprofundei esses conhecimentos, participando de conversas simples e
-                                compreendendo textos curtos. O Book 4 me desafiou com tópicos mais complexos, melhorando
-                                minha compreensão auditiva e pronúncia. No Book 5, refinei essas habilidades, discutindo
-                                temas mais avançados e lendo textos mais elaborados. Finalmente, no Book 6, alcancei um
-                                nível intermediário, conseguindo expressar opiniões e ideias de forma clara. Ao final de
-                                cada módulo, participei de avaliações práticas, conversando diretamente com os
-                                professores, o que consolidou meu aprendizado e aumentou minha confiança no uso do
-                                inglês. </p>
-                        </div>
-
-                    </div><!-- fim curso 1 -->
-
-                    <!-- Curso 2 -->
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <span>Designer de Interface Web - <i>SENAI</i></span>
-                            <i class="bi bi-caret-down-fill"></i>
-                        </button>
-
-                        <div class="accordion-body">
-                            <p>SENAI. Fev 2025 - Mar 2025 | 60h</p>
-                            <p>Ao finalizar o curso de Designer de Interface Web pelo SENAI, reconheço que foi uma
-                                experiência muito enriquecedora pra mim. Em 60 horas de aprendizado, mergulhei de vez no
-                                mundo do design digital, com foco na criação de interfaces bonitas, intuitivas e fáceis
-                                de usar. Aprendi a pensar na experiência do usuário e transformar ideias em projetos
-                                práticos. Durante o curso, usei ferramentas e softwares de design que estão em alta no
-                                mercado, o que me deu mais segurança pra desenvolver sites funcionais e visualmente
-                                atrativos. Foi uma ótima oportunidade pra unir criatividade e tecnologia de forma
-                                profissional e atual.</p>
-                        </div>
-
-                    </div><!-- fim curso 2 -->
-
-                    <!-- Curso 3 -->
-                    <div class="accordion-item">
-                        <button class="accordion-header end">
-                            <span>HTML & CSS - <i>Instituto Muda Brasil</i></span>
-                            <i class="bi bi-caret-down-fill"></i>
-                        </button>
-
-                        <div class="accordion-body end">
-                            <p>Instituto Muda Brasil. Jun 2022 - Dez 2022</p>
-                            <p>Participei do programa Bolsa Tech, uma iniciativa da Prefeitura de São Paulo em parceria
-                                com o Instituto Muda Brasil, que ofereceu uma formação completa na área de tecnologia da
-                                informação voltada para jovens de 16 a 20 anos. O curso teve duração de seis meses, com
-                                uma carga horária de 20 horas semanais — sendo 16 horas em formato EAD e 4 horas
-                                presenciais.
-
-                                Durante esse período, aprendi desde os fundamentos da informática até o desenvolvimento
-                                de software. No primeiro módulo, com 100 horas, me aprofundei em HTML e CSS, aprendendo
-                                a estruturar e estilizar páginas web, além de utilizar ferramentas como o Git para o
-                                controle de versão. Nos módulos seguintes, tive contato com JavaScript, Bootstrap e
-                                Ruby, o que ampliou bastante meus conhecimentos em programação e desenvolvimento web.
-
-                                Além das habilidades técnicas, o curso também trabalhou bastante o desenvolvimento de
-                                competências socioemocionais, o que me ajudou a estar mais preparado para os desafios do
-                                mercado de trabalho.</p>
-                        </div>
-
-                    </div><!-- fim curso 3 -->
-
-                </div> <!-- fim accordion -->
-            </div>
-
-        </div> <!-- FIM CONTENT 2  -->
+        </div>
     </section>
 
-    <!-- FIM SOBRE -->
+    <!-- END PROJECTS -->
 
 
-    <!-- CONTATO -->
+    <!-- CONTACT -->
 
-    <section id="contato" class="contato">
-        <h2>Contato</h2>
+    <section class="contact" id="contact">
+        <div class="container-fluid py-5">
+            <h1 class="text-center display-5 fw-bold">Contato</h1>
+            <div class="line d-block mx-auto"></div>
 
-        <p>Fico à disposição para conversas, parcerias ou qualquer dúvida que você possa ter. Você pode entrar em
-            contato comigo pelas redes abaixo — WhatsApp, Instagram, Linkedin ou GitHub — ou, se preferir, preencha o
-            formulário e retornarei assim que possível.</p>
+            <div class="container-contact">
+                <h2 class="text-center display-6 fw-bold pt-5">Entre em Contato</h2>
+                <p class="text-center fs-5">Fico à disposição para conversas, parcerias ou qualquer dúvida que você possa ter.</p>
 
-        <ul class="menu menu-social">
-            <li>
-                <a href="https://wa.me/+5511989738214" class="menu-link" target="_blank">
+                <!-- social -->
+                <div class="social-contact d-flex justify-content-center gap-4 mb-3 fs-3">
+                    <a href="https://wa.me/+5511989738214" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://www.instagram.com/gbrlwx/" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/gabrielalmeidasilva/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/GabrielAlmeidaSil" target="_blank"><i class="bi bi-github"></i></a>
+                </div>
 
-                    <i class="menu-icone bi bi-whatsapp"></i>
-                    <span>Whatsapp</span>
+                <!-- my email -->
+                <div class="my-email text-center py-3">
+                    <a href="mailto:gabriel.almesilva@gmail.com" class="border py-2 px-4 fs-4">
+                        <i class="bi bi-envelope"></i>
+                        gabriel.almesilva@gmail.com
+                    </a>
+                </div>
 
-                </a>
-            </li>
+                
+                <!-- form -->
+                <form action="" method="post" class="form align-items-center d-block mx-auto border p-4 rounded mt-4">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label fw-semibold">Nome</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
+                    </div>
 
-            <li>
-                <a href="https://www.instagram.com/gbrlwx/" class="menu-link" target="_blank">
+                    <div class="mb-3">
+                        <label for="email" class="form-label fw-semibold">E-mail</label>
+                        <input type="email" class="form-control" id="email" placeholder="Seu Email" required>
+                    </div>
 
-                    <i class="menu-icone bi bi-instagram"></i>
-                    <span>Instagram</span>
+                    <div class="mb-3">
+                        <label for="mensagem" class="form-label fw-semibold">Mensagem</label>
+                        <textarea class="text-area form-control" id="mensagem" rows="3" placeholder="Digite sua mensagem" required></textarea>
+                    </div>
 
-                </a>
-            </li>
+                    <div class="d-flex justify-content-between mt-4">
+                        <button type="reset" class="btn btn-c fw-semibold fs-5 d-flex gap-2">
+                            Limpar <i class="bi bi-x-lg"></i>
+                        </button>
 
-            <li>
-                <a href="https://www.linkedin.com/in/gabrielalmeidasilva/" class="menu-link" target="_blank">
+                        <button type="submit" class="btn btn-s fw-semibold fs-5 d-flex gap-2">
+                            Enviar <i class="bi bi-send"></i>
+                        </button>
+                    </div>
+                </form>
 
-                    <i class="menu-icone bi bi-linkedin"></i>
-                    <span>Linkedin</span>
-
-                </a>
-            </li>
-
-            <li>
-                <a href="https://github.com/GabrielAlmeidaSil" class="menu-link" target="_blank">
-
-                    <i class="menu-icone bi bi-github"></i>
-                    <span>GitHub</span>
-
-                </a>
-            </li>
-
-        </ul>
-
-        <a href="mailto:gabriel.almesilva@gmail.com">
-            <button class="btn btn-primary">
-                <i class="menu-icone bi bi-envelope-fill"></i>
-                <span class="email">gabriel.almesilva@gmail.com</span>
-            </button>
-        </a>
-
-        <!-- Forms -->
-
-        <p>
-            Entre em contato preenchendo o formulário abaixo.
-        </p>
-
-        <form action="https://formspree.io/f/xovevjgq" method="post" class="form-contato"> <!-- Formspree -->
-
-            <label for="nome">
-                Nome
-            </label>
-            <input type="text" name="nome" id="nome" placeholder="Nome Completo" required>
-
-            <label for="email">
-                E-mail
-            </label>
-            <input type="email" name="email" id="email" placeholder="Seu e-mail" required>
-
-            <label for="mensagem">
-                Mensagem
-            </label>
-            <textarea name="mensagem" id="mensagem" placeholder="Digite sua mensagem" required></textarea>
-
-            <button type="submit" class="btn btn-primary">
-                <span>Enviar</span>
-            </button>
-
-        </form>
-
-        <!-- Fim Forms -->
-
+            </div>
+        </div>
     </section>
 
-    <!-- FIM CONTATO -->
+    <!-- END CONTACT -->
 
-    <footer>
-        <p>
-            &copy; 2025. Portfólio desenvolvido para fins Educativos com base nas aulas do
-            <a href="https://sp.senai.br/unidade/leopoldina/" target="_blank">
-                Senai Leopoldina - SP
-            </a>.
-            Desenvolvido por
-            <a href="https://github.com/GabrielAlmeidaSil" target="_blank">
-                <i class="bi bi-github"></i>
-                Gabriel Almeida
-            </a>
+    <!-- FOOTER -->
+
+    <footer class="footer text-center pt-3">
+        <p>© 2025 Gabriel Almeida • Portfólio profissional de Front-End. Desenvolvido por  
+            <i class="bi bi-github"></i><a href="https://github.com/GabrielAlmeidaSil" class="my-name ms-1" target="_blank">Gabriel Almeida</a> | 
+            <a href="#inicio">Voltar para o topo</a> <i class="bi bi-arrow-up"></i> 
         </p>
     </footer>
 
+    <!-- FOOTER -->
+
+
+
+
+    <!-- Import my JS -->
     <script src="js/script.js"></script>
 
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
+    <!-- Import JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
     </script>
 </body>
 
