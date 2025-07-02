@@ -7,7 +7,8 @@
     <title>Portfolio Gabriel</title>
     <link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon">
 
-
+    <!-- Import AOS.js -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Import Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -68,20 +69,20 @@
         <div class="row d-flex align-items-center justify-content-center py-5">
             <!-- info -->
             <div class="info-left col-12 col-md-7">
-                <h1 class="left-h1 py-2 display-5">Gabriel Almeida</h1>
-                <h1 class="left-h1 display-2 mb-3">Desenvolvedor <br> Front-End</h1>
-                <h2>Transformando ideias em interfaces modernas e funcionais.</h2>
+                <h1 class="left-h1 py-2 display-5" data-aos="fade-down">Gabriel Almeida</h1>
+                <h1 class="left-h1 display-2 mb-3" data-aos="fade-down" data-aos-delay="150">Desenvolvedor <br> Front-End</h1>
+                <h2 data-aos="fade-down" data-aos-delay="200">Transformando ideias em interfaces modernas e funcionais.</h2>
 
                 <!-- social -->
                 <div class="social py-4 d-flex gap-4 fs-3">
-                    <a href="https://wa.me/+5511989738214" target="_blank"><i class="bi bi-whatsapp"></i></a>
-                    <a href="https://www.instagram.com/gbrlwx/" target="_blank"><i class="bi bi-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/gabrielalmeidasilva/" target="_blank"><i
+                    <a href="https://wa.me/+5511989738214" target="_blank" data-aos="fade-left"><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/gbrlwx/" target="_blank" data-aos="fade-left" data-aos-delay="150"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/gabrielalmeidasilva/" target="_blank" data-aos="fade-left" data-aos-delay="200"><i
                             class="bi bi-linkedin"></i></a>
-                    <a href="https://github.com/GabrielAlmeidaSil" target="_blank"><i class="bi bi-github"></i></a>
+                    <a href="https://github.com/GabrielAlmeidaSil" target="_blank" data-aos="fade-left" data-aos-delay="250"><i class="bi bi-github"></i></a>
                 </div>
 
-                <div class="container-button py-4">
+                <div class="container-button py-4" data-aos="zoom-in" data-aos-delay="180">
                     <a href="#projects" class="main-button rounded fs-2 py-3 px-5 fw-semibold">Ver projetos
                         <i class="bi bi-search"></i>
                     </a>
@@ -91,9 +92,9 @@
             <!-- img -->
             <div class="col-12 col-md-5 mt-5">
                 <!-- <img src="img/myself/BackgroundEraser_20250625_192413146.png" alt="" class="img-fluid"> eu-->
-                <!-- <img src="img/myself/img-main.png" alt="" class="img-fluid"> --> 
+                <!-- <img src="img/myself/img-main.png" alt="" class="img-fluid"> -->
                 <!-- <img src="img/myself/img-main.svg" alt="" class="img-fluid"> -->
-                 <img src="img/main/img-main.png" alt="" class="img-fluid">
+                <img src="img/main/img-main.png" alt="" class="img-fluid">
             </div>
         </div>
     </main>
@@ -107,7 +108,7 @@
             <div class="row align-items-center gap-1">
                 <!-- left about -->
                 <div class="col-12 col-lg-4">
-                    <img src="img/myself/img-about.png" alt="" class="img-fluid">
+                    <img src="img/myself/img-about.png" alt="" class="img-fluid" data-aos="fade-right">
                 </div>
 
                 <!-- rigth about -->
@@ -137,7 +138,7 @@
 
                         <div class="ms-2">
                             <i class="bi bi-envelope"></i>
-                            <strong>Email:</strong> 
+                            <strong>Email:</strong>
                             <a href="mailto:gabriel.almesilva@gmail.com" class="email-about">
                                 gabriel.almesilva@gmail.com
                             </a>
@@ -238,7 +239,17 @@
                                 data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body fs-5">
                                     <p class="subtitle-accordion">Santa Rosa. Fev 2022 - Mar 2025</p>
-                                    <p>Ao concluir o curso de inglês na Escola Santa Rosa, comecei no Book 2, onde aprendi vocabulário básico e estruturas gramaticais simples, permitindo-me formar frases do dia a dia. No Book 3, aprofundei esses conhecimentos, participando de conversas simples e compreendendo textos curtos. O Book 4 me desafiou com tópicos mais complexos, melhorando minha compreensão auditiva e pronúncia. No Book 5, refinei essas habilidades, discutindo temas mais avançados e lendo textos mais elaborados. Finalmente, no Book 6, alcancei um nível intermediário, conseguindo expressar opiniões e ideias de forma clara. Ao final de cada módulo, participei de avaliações práticas, conversando diretamente com os professores, o que consolidou meu aprendizado e aumentou minha confiança no uso do inglês.
+                                    <p>Ao concluir o curso de inglês na Escola Santa Rosa, comecei no Book 2, onde
+                                        aprendi vocabulário básico e estruturas gramaticais simples, permitindo-me
+                                        formar frases do dia a dia. No Book 3, aprofundei esses conhecimentos,
+                                        participando de conversas simples e compreendendo textos curtos. O Book 4 me
+                                        desafiou com tópicos mais complexos, melhorando minha compreensão auditiva e
+                                        pronúncia. No Book 5, refinei essas habilidades, discutindo temas mais avançados
+                                        e lendo textos mais elaborados. Finalmente, no Book 6, alcancei um nível
+                                        intermediário, conseguindo expressar opiniões e ideias de forma clara. Ao final
+                                        de cada módulo, participei de avaliações práticas, conversando diretamente com
+                                        os professores, o que consolidou meu aprendizado e aumentou minha confiança no
+                                        uso do inglês.
                                     </p>
                                 </div>
                             </div>
@@ -256,13 +267,20 @@
                                 data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body fs-5">
                                     <p class="subtitle-accordion">SENAI. Fev 2025 - Mar 2025 | 60h</p>
-                                    <p>Ao finalizar o curso de Designer de Interface Web pelo SENAI, reconheço que foi uma
-                                        experiência muito enriquecedora pra mim. Em 60 horas de aprendizado, mergulhei de vez no
-                                        mundo do design digital, com foco na criação de interfaces bonitas, intuitivas e fáceis
-                                        de usar. Aprendi a pensar na experiência do usuário e transformar ideias em projetos
-                                        práticos. Durante o curso, usei ferramentas e softwares de design que estão em alta no
-                                        mercado, o que me deu mais segurança pra desenvolver sites funcionais e visualmente
-                                        atrativos. Foi uma ótima oportunidade pra unir criatividade e tecnologia de forma
+                                    <p>Ao finalizar o curso de Designer de Interface Web pelo SENAI, reconheço que foi
+                                        uma
+                                        experiência muito enriquecedora pra mim. Em 60 horas de aprendizado, mergulhei
+                                        de vez no
+                                        mundo do design digital, com foco na criação de interfaces bonitas, intuitivas e
+                                        fáceis
+                                        de usar. Aprendi a pensar na experiência do usuário e transformar ideias em
+                                        projetos
+                                        práticos. Durante o curso, usei ferramentas e softwares de design que estão em
+                                        alta no
+                                        mercado, o que me deu mais segurança pra desenvolver sites funcionais e
+                                        visualmente
+                                        atrativos. Foi uma ótima oportunidade pra unir criatividade e tecnologia de
+                                        forma
                                         profissional e atual.
                                     </p>
                                 </div>
@@ -281,20 +299,30 @@
                                 data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body fs-5">
                                     <p class="subtitle-accordion">Instituto Muda Brasil. Jun 2022 - Dez 2022</p>
-                                    <p>Participei do programa Bolsa Tech, uma iniciativa da Prefeitura de São Paulo em parceria
-                                        com o Instituto Muda Brasil, que ofereceu uma formação completa na área de tecnologia da
-                                        informação voltada para jovens de 16 a 20 anos. O curso teve duração de seis meses, com
+                                    <p>Participei do programa Bolsa Tech, uma iniciativa da Prefeitura de São Paulo em
+                                        parceria
+                                        com o Instituto Muda Brasil, que ofereceu uma formação completa na área de
+                                        tecnologia da
+                                        informação voltada para jovens de 16 a 20 anos. O curso teve duração de seis
+                                        meses, com
                                         uma carga horária de 20 horas semanais — sendo 16 horas em formato EAD e 4 horas
                                         presenciais.
 
-                                        Durante esse período, aprendi desde os fundamentos da informática até o desenvolvimento
-                                        de software. No primeiro módulo, com 100 horas, me aprofundei em HTML e CSS, aprendendo
-                                        a estruturar e estilizar páginas web, além de utilizar ferramentas como o Git para o
-                                        controle de versão. Nos módulos seguintes, tive contato com JavaScript, Bootstrap e
-                                        Ruby, o que ampliou bastante meus conhecimentos em programação e desenvolvimento web.
+                                        Durante esse período, aprendi desde os fundamentos da informática até o
+                                        desenvolvimento
+                                        de software. No primeiro módulo, com 100 horas, me aprofundei em HTML e CSS,
+                                        aprendendo
+                                        a estruturar e estilizar páginas web, além de utilizar ferramentas como o Git
+                                        para o
+                                        controle de versão. Nos módulos seguintes, tive contato com JavaScript,
+                                        Bootstrap e
+                                        Ruby, o que ampliou bastante meus conhecimentos em programação e desenvolvimento
+                                        web.
 
-                                        Além das habilidades técnicas, o curso também trabalhou bastante o desenvolvimento de
-                                        competências socioemocionais, o que me ajudou a estar mais preparado para os desafios do
+                                        Além das habilidades técnicas, o curso também trabalhou bastante o
+                                        desenvolvimento de
+                                        competências socioemocionais, o que me ajudou a estar mais preparado para os
+                                        desafios do
                                         mercado de trabalho.
                                     </p>
                                 </div>
@@ -547,7 +575,12 @@
     <!-- FOOTER -->
 
 
+    <!-- Import AOS.js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <script>
+        AOS.init();
+    </script>
 
     <!-- Import my JS -->
     <script src="js/script.js"></script>
