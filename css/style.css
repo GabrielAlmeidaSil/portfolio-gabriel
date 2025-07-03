@@ -94,13 +94,19 @@ header {
     color: var(--white);
 }
 
-nav a {
-  color: var(--white) !important;
+.nav-link:hover{
+    color: var(--hover-button);
+    transition: .3s;
+    transform: translateY(-3px);
+}
+
+nav a{
+  color: var(--white);
   text-decoration: none;
   position: relative;
 }
 
-nav a::after {
+/* nav a::after {
   content: '';
   position: absolute;
   left: 0;
@@ -113,7 +119,7 @@ nav a::after {
 
 nav a:hover::after {
   width: 100%;
-}
+} */
 
 
 .navbar-toggler {
@@ -166,7 +172,7 @@ nav a:hover::after {
 }
 
 .main-button:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     box-shadow: 0 0 12px #58a6ff80;
     background: var(--bg-button);
     transition: .3s;
@@ -211,6 +217,7 @@ img {
     background: var(--hover-button);
     box-shadow: 0 0 12px #58a6ff80;
     transition: .4s;
+    transform: scale(1.02);
 }
 
 /* formation + experience */
