@@ -32,6 +32,7 @@ menuLinks.forEach(item => {
     })
 })
 
+/* Animation icon menu */
 const toggleButton = document.getElementById('toggleTheme');
     let darkMode = true; 
 
