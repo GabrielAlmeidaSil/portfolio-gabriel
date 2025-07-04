@@ -31,3 +31,21 @@ menuLinks.forEach(item => {
         item.classList.add("active");
     })
 })
+
+const toggleButton = document.getElementById('toggleTheme');
+    let darkMode = true; 
+
+    toggleButton.addEventListener('click', () => {
+
+        document.documentElement.setAttribute('data-theme', darkMode ? 'light' : 'dark');
+        
+        toggleButton.classList.add('animate');
+        
+        setTimeout(() => {
+            toggleButton.classList.remove('animate');
+            toggleButton.className = darkMode
+                ? 'bi bi-moon'
+                : 'bi bi-sun';
+            darkMode = !darkMode;
+        }, 400);
+    });
