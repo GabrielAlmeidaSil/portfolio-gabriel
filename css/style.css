@@ -4,8 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* Fonts */
-:root,
-:root[data-theme="dark"] {
+:root {
     --menu: "Montserrat", sans-serif;
     --titles: "Poppins", sans-serif;
     --paragraphs: "Inter", sans-serif;
@@ -14,19 +13,20 @@
 }
 
 /* Colors Dark */
-:root {
-    --bg-body: #0E1117;
-    --bg-body-interleaved: #161B22;
-    --bg-menu: #0D1B2A;
-    --color-titles: #F0F6FC;
+:root,
+:root[data-theme="dark"] {
+    --bg-body: #080C1C;
+    --bg-body-interleaved: #0F172A;
+    --bg-menu: #14213D;
+    --color-titles: #F8F8F8;
     --color-paragraphs: #FFF;
     --color-icon-hover: #2979FF;
-    --bg-button: #2979FF;
+    --bg-button: #4FACFE;
     --color-button: #fff;
     --hover-button: #1E6ED2;
     --shadow-button: #58a6ff80;
     --line-h1: #2979FF;
-    --bg-accordion: #1f1f1f;
+    --bg-accordion: #1462a7;
     --bg-card-skill: #fff;
     --bg-card-projects: #1b1b1d;
     --hover-card-projects: #e0e0e066;
@@ -42,19 +42,26 @@
 
 /* Colors Light */
 :root[data-theme="light"] {
-    --bg-body: #cecece;
-    --bg-body-interleaved: #ababab;
-    --color-titles: #000022;
-    --color-paragraphs: #000;
-    --bg-button: #7CA9F9;
-    --color-button: #000;
-    --bg-accordion: #F0F2F5;
-    --bg-card-skill: #afafaf;
+    --bg-body: #F2F2F2;
+    --bg-body-interleaved: #CBD5E1;
+    --bg-menu: #14213D;
+    --color-titles: #000;
+    --color-paragraphs: #0D0D0D;
+    --color-icon-hover: #2979FF;
+    --bg-button: #1E6ED2;
+    --color-button: #fff;
+    --hover-button: #233ed9;
+    --shadow-button: #272727;
+    --line-h1: #2979FF;
+    --bg-accordion: #c1ddff;
+    --bg-card-skill: #d4d4d4;
     --bg-card-projects: #CECECE;
+    --hover-card-projects: #272727;
+    --shadow-btn-projects: #58a6ff80;
     --bg-form: #E0E2E8;
 
     --white: #000;
-    --black: #fff;
+    --black: #fff; 
 }
 
 /* general */
@@ -62,7 +69,7 @@ html[data-theme='dark'] .logo {
     filter: invert(1);
 }
 
-html{
+html {
     scroll-padding-top: 70px;
 }
 
@@ -95,10 +102,15 @@ body {
 
 /* MENU */
 
+header {
+  border-bottom: 2px solid var(--white); 
+  z-index: 999;
+}
+
+
 .menu,
 header {
     background: var(--bg-menu);
-    border-bottom: 2px solid var(--white);
 }
 
 .navbar-nav {
@@ -109,22 +121,23 @@ header {
     color: #fff;
 }
 
-.nav-link:hover{
-    color: var(--hover-button);
+.nav-link:hover {
+    color: #fff;
     transition: .3s;
     transform: translateY(-3px);
+    text-shadow: 0 0 8px #38BDF8, 0 0 15px #38BDF8;
 }
 
-nav a{
-  color: #fff;
-  text-decoration: none;
-  position: relative;
+nav a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
 }
 
 
 .navbar-toggler {
     border: 2px solid #fff;
-    color: #fff;
+    color: var(--white);
 }
 
 .navbar-toggler-icon {
@@ -154,10 +167,6 @@ nav a{
 }
 
 
-
-
-
-
 /* END MENU */
 
 
@@ -178,10 +187,11 @@ nav a{
     transition: .3s;
 }
 
-.main-button, .about-button{
+.main-button,
+.about-button {
     background: var(--bg-button);
     text-decoration: none;
-    color: var(--white);
+    color: var(--color-button);
     font-family: var(--button);
 }
 
@@ -287,7 +297,8 @@ img {
     flex-wrap: wrap;
 }
 
-.card-skill, .card-skill p{
+.card-skill,
+.card-skill p {
     background: var(--bg-card-skill);
     color: var(--black);
 }
@@ -483,6 +494,7 @@ form label {
     color: var(--white);
     font-family: var(--footer);
     border-top: 2px solid var(--white);
+    background: var(--bg-body-interleaved);
 }
 
 footer p a {
