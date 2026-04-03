@@ -247,8 +247,8 @@ img {
 }
 
 .about-p {
-    line-height: 32px;
-    text-align: justify;
+    line-height: 2.5rem;
+    /* text-align: justify; */
 }
 
 .my-info {
@@ -281,6 +281,7 @@ img {
     color: var(--color-paragraphs);
     font-style: italic;
 }
+
 
 .accordion-button:focus {
     box-shadow: none;
@@ -457,6 +458,10 @@ img {
 .social-contact a i:hover {
     color: var(--bg-button);
     transition: .3s;
+}
+
+.btn-email {
+    font-size: 1.12rem;
 }
 
 .my-email a {
