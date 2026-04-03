@@ -27,7 +27,7 @@
     --hover-button: #1E6ED2;
     --shadow-button: #58a6ff80;
     --line-h1: #2979FF;
-    --bg-accordion: #1565C0;
+    --bg-accordion: #3B82F6; /* 1565C0 */
     --bg-card-skill: #fff;
     --bg-card-projects: #1b1b1d;
     --hover-card-projects: #e0e0e066;
@@ -191,6 +191,14 @@ nav a {
     letter-spacing: 2px;
 }
 
+.nome-pessoal {
+    letter-spacing: 0.4rem;
+}
+
+.text-introducao {
+    line-height: 2.5rem;
+}
+
 .social a {
     color: var(--white);
 }
@@ -295,6 +303,7 @@ img {
     background-color: var(--bg-accordion);
     color: var(--white);
 }
+
 
 /* Change the color of arrows */
 .accordion-button::after {
