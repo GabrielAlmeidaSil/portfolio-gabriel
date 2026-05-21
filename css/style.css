@@ -332,6 +332,10 @@ img {
     flex-wrap: wrap;
 }
 
+.card-skill {
+    margin-bottom: 12px;
+}
+
 .card-skill,
 .card-skill p {
     background: var(--bg-card-skill); 
