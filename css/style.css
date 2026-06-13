@@ -428,15 +428,15 @@ img {
 }
 
 .card:nth-child(1) {
-    border-top: 3px solid #0d6efd;
+    border-top: 3px solid #dc3545;
 }
 
 .card:nth-child(2) {
-    border-top: 3px solid #6610f2;
+    border-top: 3px solid #0d6efd;
 }
 
 .card:nth-child(3) {
-    border-top: 3px solid #dc3545;
+    border-top: 3px solid #6610f2;
 }
 
 /* PROJECTS */
