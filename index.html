@@ -4,12 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Gabriel</title>
-    <link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon">
+    <title>Gabriel Almeida | Desenvolvedor Júnior</title>
+    <meta name="description"
+        content="Portfólio de Gabriel Almeida, desenvolvedor júnior em Osasco-SP. Trabalho com Angular, TypeScript e PrimeNG e estou estudando Python e FastAPI.">
+    <link rel="icon" href="img/favicon/favicon.png" type="image/png">
 
-    <!-- Key words -->
-    <meta name="keywords"
-        content="Gabriel, Almeida, Gabriel Almeida, github, gabriel, gabriel almeida, porfolio, gabriel portfolio, portfolio gabriel, sobre mim, skills, projetos, contato">
+    <!-- Open Graph (preview when the link is shared on LinkedIn, WhatsApp...) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://gabrielalmeidasil.github.io/portfolio-gabriel/">
+    <meta property="og:title" content="Gabriel Almeida | Desenvolvedor Júnior">
+    <meta property="og:description"
+        content="Angular, TypeScript e PrimeNG no dia a dia. Estudando Python e FastAPI. Veja meus projetos e entre em contato.">
+    <meta property="og:image" content="https://gabrielalmeidasil.github.io/portfolio-gabriel/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Apply the saved theme before the page renders (avoids a flash of the wrong theme) -->
+    <script>
+        (function () {
+            let theme = null;
+            try { theme = localStorage.getItem("theme"); } catch (e) { }
+            if (!theme) theme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", theme);
+        })();
+    </script>
+
+    <!-- Import Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Import AOS.js -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -29,10 +55,10 @@
     <!-- HEADER -->
 
     <header class="fixed-top p-2">
-        <nav class="navbar navbar-expand-lg position-relative px-3 py-3 ">
+        <nav class="navbar navbar-expand-lg position-relative px-3 py-3" aria-label="Menu principal">
             <!-- button mobile -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
-                aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="menuNav" aria-expanded="false" aria-label="Abrir menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -43,13 +69,13 @@
                         <a class="nav-link fs-5 fw-semibold" href="#inicio">Início</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link fs-5 fw-semibold" href="#projects">Projetos</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link fs-5 fw-semibold" href="#about">Sobre</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fs-5 fw-semibold" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-5 fw-semibold" href="#projects">Projetos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fs-5 fw-semibold" href="#contact">Contato</a>
@@ -57,561 +83,515 @@
                 </ul>
             </div>
 
-            <!-- icon moon -->
-            <div class="header-toggle me-3 fs-2">
-                <i id="toggleTheme" class="bi bi-sun"></i>
-            </div>
+            <!-- theme button -->
+            <button type="button" id="toggleTheme" class="header-toggle me-3 fs-2" aria-label="Ativar tema claro">
+                <i id="themeIcon" class="bi bi-sun"></i>
+            </button>
         </nav>
     </header>
 
     <!-- END HEADER -->
 
+    <main>
 
-    <!-- MAIN -->
+        <!-- HERO -->
 
-    <main class="main container my-5" id="inicio">
-        <div class="row d-flex align-items-center justify-content-center py-5">
-            <!-- info -->
-            <div class="info-left col-12 col-md-7">
-                <h1 class="left-h1 py-3 display-5 nome-pessoal fw-medium" data-aos="fade-down">Gabriel Almeida</h1>
-                <h1 class="left-h1 display-2 mb-3 fw-lighter" data-aos="fade-down" data-aos-delay="150">Desenvolvedor <br> Junior</h1>
-                <h2 class="text-introducao" data-aos="fade-down" data-aos-delay="200">Transformando ideias em aplicações web bem estruturadas e funcionais.</h2>
-
-                <!-- social -->
-                <div class="social py-4 d-flex gap-4 fs-3">
-                    <a href="https://wa.me/+5511989738214" target="_blank" data-aos="fade-left">
-                        <i class="bi bi-whatsapp"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/gabriel-almeida-768a59331/" target="_blank"
-                        data-aos="fade-left" data-aos-delay="200"><i class="bi bi-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/GabrielAlmeidaSil" target="_blank" data-aos="fade-left"
-                        data-aos-delay="250">
-                        <i class="bi bi-github"></i>
-                    </a>
-                </div>
-
-                <div class="container-button py-1" data-aos="zoom-in" data-aos-delay="300">
-                    <a href="#projects"
-                        class="main-button rounded fs-3 py-3 px-5 fw-bold text-center d-block d-sm-inline-block">
-                        Ver projetos <i class="bi bi-search"></i>
-                    </a>
-                </div>
-
-            </div>
-
-            <!-- img -->
-            <div class="col-12 col-md-5 mt-5">
-                <img src="img/main/img-main.png"
-                    alt="Imagem cartoon de um homem segurando um notebook, atrás dele vários computadores com sistemas abertos"
-                    class="img-fluid">
-            </div>
-        </div>
-    </main>
-
-    <!-- END MAIN -->
-
-    <!-- ABOUT -->
-
-    <section class="about container-fluid py-4" id="about">
-        <div class="container">
-            <div class="row align-items-center gap-1">
-                <!-- left about -->
-                <div class="col-12 col-lg-4">
-                    <img src="img/myself/img-about.png"
-                        alt="Uma foto minha de rosto e metade do corpo, com fundo transparente" class="img-fluid"
-                        data-aos="fade-right">
-                </div>
-
-                <!-- rigth about -->
-                <div class="col-12 col-lg-7 mt-3">
-                    <h1 class="title-about fw-bold mt-4 display-5" data-aos="fade-down">Sobre mim</h1>
-                    <p class="about-p fs-5 my-3" data-aos="fade-down" data-aos-delay="150">
-                        Olá, tudo bem? Me chamo Gabriel Almeida da Silva, tenho 20 anos e atuo como Desenvolvedor Júnior, 
-                        com experiência no desenvolvimento de aplicações web utilizando Angular, integração com APIs em C# 
-                        e banco de dados SQL Server. Sou formado em Análise e Desenvolvimento de Sistemas e atualmente participo 
-                        da construção e evolução de sistemas utilizados no dia a dia da empresa, atuando tanto na criação de 
-                        interfaces modernas quanto na implementação de lógicas e funcionalidades.
-                        Busco desenvolver soluções bem estruturadas, funcionais e organizadas, sempre aprimorando minhas habilidades 
-                        técnicas e evoluindo profissionalmente de forma constante.
+        <section class="main container my-5" id="inicio">
+            <div class="row d-flex align-items-center justify-content-center py-5">
+                <!-- info -->
+                <div class="info-left col-12 col-md-7">
+                    <h1 class="left-h1 py-3 display-5 nome-pessoal fw-medium" data-aos="fade-down">Gabriel Almeida</h1>
+                    <p class="left-h1 display-2 mb-3 fw-light" data-aos="fade-down" data-aos-delay="150">Desenvolvedor <br> Júnior</p>
+                    <p class="text-introducao fs-4" data-aos="fade-down" data-aos-delay="200">
+                        Trabalho com desenvolvimento de sistemas web, tanto na parte das interfaces quanto nas APIs e integrações.
                     </p>
 
-                    <div class="my-info d-flex flex-column gap-4 rounded" data-aos="fade-down" data-aos-delay="200">
-                        <div class="mt-2 ms-2">
-                            <i class="bi bi-person"></i>
-                            <strong>Nome:</strong> Gabriel Almeida da Silva
-                        </div>
-
-                        <div class="ms-2">
-                            <i class="bi bi-geo-alt"></i>
-                            <strong>Cidade / Estado:</strong> Osasco, SP
-                        </div>
-
-                        <div class="ms-2">
-                            <i class="bi bi-envelope"></i>
-                            <strong>Email:</strong>
-                            <a href="mailto:gabriel.almesilva@gmail.com" class="email-about">
-                                gabriel.almesilva@gmail.com
-                            </a>
-                        </div>
-
-                        <div class="mb-2 ms-2">
-                            <i class="bi bi-translate"></i>
-                            <strong>Inglês:</strong> Intermediário
-                        </div>
+                    <!-- social -->
+                    <div class="social py-4 d-flex gap-4 fs-3">
+                        <a href="https://wa.me/+5511989738214" target="_blank" rel="noopener" aria-label="WhatsApp"
+                            data-aos="fade-left">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/gabriel-almeida-768a59331/" target="_blank" rel="noopener"
+                            aria-label="LinkedIn" data-aos="fade-left" data-aos-delay="200">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/GabrielAlmeidaSil" target="_blank" rel="noopener" aria-label="GitHub"
+                            data-aos="fade-left" data-aos-delay="250">
+                            <i class="bi bi-github"></i>
+                        </a>
                     </div>
 
-                    <div class="container-button pt-5 pb-5" data-aos="zoom-in" data-aos-delay="200">
-                        <a href="https://www.linkedin.com/in/gabriel-almeida-768a59331/"
-                            class="about-button rounded fs-4 py-3 px-4 fw-bold text-center d-block d-sm-inline-block"
-                            target="_blank">Conecte-se Comigo
-                            <i class="bi bi-arrow-up-right"></i>
+                    <div class="container-button py-1" data-aos="zoom-in" data-aos-delay="300">
+                        <a href="#projects"
+                            class="main-button rounded fs-3 py-3 px-5 fw-bold text-center d-block d-sm-inline-block">
+                            Ver projetos <i class="bi bi-arrow-down"></i>
                         </a>
                     </div>
                 </div>
+
+                <!-- img -->
+                <div class="col-12 col-md-5 mt-5">
+                    <img src="img/main/img-main.png" width="540" height="720"
+                        alt="Ilustração de um desenvolvedor segurando um notebook em frente a telas com código"
+                        class="img-fluid">
+                </div>
             </div>
+        </section>
 
-            <!-- Formation + Curses -->
-            <div class="row pt-4">
+        <!-- END HERO -->
 
-                <!-- Formation -->
-                <div class="col-12 col-lg-4">
-                    <h1 class="fw-semibold h1-about">Formação</h1>
+        <!-- PROJECTS -->
 
-                    <!-- First -->
-                    <div class="py-4">
-                        <!-- First -->
-                        <div class="formation-card pb-4">
-                            <p>- <strong>Análise e Desenvolvimento de Sistemas</strong></p>
+        <section class="projects container-fluid py-3" id="projects">
+            <div class="container py-5">
+                <h2 class="section-title text-center display-5 fw-bold pb-5">Meus Projetos</h2>
+
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+                    <!-- Project 1 -->
+                    <div class="col" data-aos="fade-up">
+                        <article class="card h-100">
+                            <img src="img/projects/project1.PNG" width="800" height="450" loading="lazy"
+                                class="card-img-top" alt="Página inicial do site da Oficina do Alemão">
+                            <div class="card-body d-flex flex-column">
+                                <span class="project-badge mb-2">Freelance · Jun 2026</span>
+                                <h3 class="card-title h5">Oficina do Alemão</h3>
+                                <p class="card-text">Site real para uma oficina mecânica de Piranguinho-MG, com foco em
+                                    divulgação dos serviços, geração de contatos via WhatsApp e presença online.
+                                </p>
+
+                                <ul class="skill-list skill-list-sm pb-3">
+                                    <li class="skill-chip"><img src="img/skills/html.webp" alt="" width="18" height="18">HTML</li>
+                                    <li class="skill-chip"><img src="img/skills/css.png" alt="" width="18" height="18">CSS</li>
+                                    <li class="skill-chip"><img src="img/skills/js.webp" alt="" width="18" height="18">JavaScript</li>
+                                    <li class="skill-chip"><img src="img/skills/bootstrap.png" alt="" width="18" height="18">Bootstrap</li>
+                                </ul>
+
+                                <div class="container-btn-projects d-flex gap-2 mt-auto">
+                                    <a href="https://gabrielalmeidasil.github.io/oficina-do-alemao/"
+                                        class="btn btn-projects-p" target="_blank" rel="noopener">Ver site
+                                        <i class="bi bi-box-arrow-up-right"></i>
+                                    </a>
+                                    <a href="https://github.com/GabrielAlmeidaSil/oficina-do-alemao"
+                                        class="btn btn-projects-c" target="_blank" rel="noopener">Código
+                                        <i class="bi bi-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="100">
+                        <article class="card h-100">
+                            <img src="img/projects/project3.PNG" width="800" height="450" loading="lazy"
+                                class="card-img-top" alt="Página inicial do Projeto Church">
+                            <div class="card-body d-flex flex-column">
+                                <span class="project-badge mb-2">Projeto pessoal · Mai 2025</span>
+                                <h3 class="card-title h5">Projeto Church</h3>
+                                <p class="card-text">Site institucional para uma igreja, com agenda, eventos e
+                                    contato fictícios, feito para praticar a construção de um site completo e responsivo.
+                                </p>
+
+                                <ul class="skill-list skill-list-sm pb-3">
+                                    <li class="skill-chip"><img src="img/skills/html.webp" alt="" width="18" height="18">HTML</li>
+                                    <li class="skill-chip"><img src="img/skills/css.png" alt="" width="18" height="18">CSS</li>
+                                    <li class="skill-chip"><img src="img/skills/js.webp" alt="" width="18" height="18">JavaScript</li>
+                                    <li class="skill-chip"><img src="img/skills/bootstrap.png" alt="" width="18" height="18">Bootstrap</li>
+                                </ul>
+
+                                <div class="container-btn-projects d-flex gap-2 mt-auto">
+                                    <a href="https://gabrielalmeidasil.github.io/church-bootstrap/"
+                                        class="btn btn-projects-p" target="_blank" rel="noopener">Ver site
+                                        <i class="bi bi-box-arrow-up-right"></i>
+                                    </a>
+                                    <a href="https://github.com/GabrielAlmeidaSil/church-bootstrap"
+                                        class="btn btn-projects-c" target="_blank" rel="noopener">Código
+                                        <i class="bi bi-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="200">
+                        <article class="card h-100">
+                            <img src="img/projects/project2.PNG" width="800" height="450" loading="lazy"
+                                class="card-img-top" alt="Página inicial deste portfólio">
+                            <div class="card-body d-flex flex-column">
+                                <span class="project-badge mb-2">Projeto pessoal · Jul 2025</span>
+                                <h3 class="card-title h5">Este portfólio</h3>
+                                <p class="card-text">Portfólio pessoal responsivo, criado para apresentar minhas habilidades,
+                                projetos e contato profissional. Desenvolvido com foco em performance e experiência do
+                                usuário.
+                                </p>
+
+                                <ul class="skill-list skill-list-sm pb-3">
+                                    <li class="skill-chip"><img src="img/skills/html.webp" alt="" width="18" height="18">HTML</li>
+                                    <li class="skill-chip"><img src="img/skills/css.png" alt="" width="18" height="18">CSS</li>
+                                    <li class="skill-chip"><img src="img/skills/js.webp" alt="" width="18" height="18">JavaScript</li>
+                                    <li class="skill-chip"><img src="img/skills/bootstrap.png" alt="" width="18" height="18">Bootstrap</li>
+                                </ul>
+
+                                <div class="container-btn-projects d-flex gap-2 mt-auto">
+                                    <a href="https://github.com/GabrielAlmeidaSil/portfolio-gabriel"
+                                        class="btn btn-projects-c" target="_blank" rel="noopener">Código
+                                        <i class="bi bi-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- END PROJECTS -->
+
+        <!-- ABOUT -->
+
+        <section class="about container-fluid py-5" id="about">
+            <div class="container">
+                <div class="row align-items-center gap-1">
+                    <!-- left about -->
+                    <div class="col-12 col-lg-4">
+                        <img src="img/myself/img-about.png" width="500" height="682" loading="lazy"
+                            alt="Foto de Gabriel Almeida sorrindo" class="img-fluid" data-aos="fade-right">
+                    </div>
+
+                    <!-- right about -->
+                    <div class="col-12 col-lg-7 mt-3">
+                        <h2 class="section-title title-about fw-bold mt-4 display-5" data-aos="fade-down">Sobre mim</h2>
+                        <div class="about-p fs-5 my-3" data-aos="fade-down" data-aos-delay="150">
                             <p>
-                                <i class="bi bi-calendar pe-2"></i>
-                                Fev 2024 - Dez 2025
+                                Sou desenvolvedor júnior na Lemar Transportes, onde trabalho nos projetos internos da
+                                empresa criando telas e funcionalidades com Angular, TypeScript e PrimeNG, integradas
+                                a APIs em C# e a bancos SQL Server.
                             </p>
                             <p>
-                                <i class="bi bi-bank pe-2"></i>
-                                UNIP
-                            </p>
-                            <p>
-                                <i class="bi bi-trophy pe-2"></i>
-                                Bolsa integral (PROUNI)
+                                Sou formado em Análise e Desenvolvimento de Sistemas pela UNIP, com bolsa integral do
+                                ProUni. Antes de entrar na área de desenvolvimento, fui aprendiz de faturamento e tive
+                                contato com a rotina de um ERP e com os processos do dia a dia de uma empresa.
                             </p>
                         </div>
 
-                        <div class="formation-card pb-4">
-                            <p>- <strong>Inglês</strong></p>
-                            <p>
-                                <i class="bi bi-calendar pe-2"></i>
-                                Fev 2022 - Mar 2025
-                            </p>
-                            <p>
-                                <i class="bi bi-bank pe-2"></i>
-                                Santa Rosa
-                            </p>
-                            <p>
-                                <i class="bi bi-mortarboard pe-2"></i>
-                                Curso
-                            </p>
-                            <p>
-                                <i class="bi bi-globe-americas pe-2"></i>
-                                Nivel: Intermediário
-                            </p>
+                        <div class="my-info d-flex flex-column gap-4 rounded" data-aos="fade-down" data-aos-delay="200">
+                            <div class="mt-2 ms-2">
+                                <i class="bi bi-person"></i>
+                                <strong>Nome:</strong> Gabriel Almeida da Silva
+                            </div>
+
+                            <div class="ms-2">
+                                <i class="bi bi-geo-alt"></i>
+                                <strong>Cidade / Estado:</strong> Osasco, SP
+                            </div>
+
+                            <div class="ms-2">
+                                <i class="bi bi-envelope"></i>
+                                <strong>Email:</strong>
+                                <a href="mailto:gabriel.almesilva@gmail.com" class="email-about">
+                                    gabriel.almesilva@gmail.com
+                                </a>
+                            </div>
+
+                            <div class="mb-2 ms-2">
+                                <i class="bi bi-translate"></i>
+                                <strong>Inglês:</strong> Intermediário
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- experience -->
-                    <h1 class="fw-semibold h1-about">Experiências</h1>
-
-                    <!-- First job -->
-                    <div class="experience-card">
-                        <p class="pt-3">
-                            <i class="bi bi-briefcase"></i> Aprendiz Faturamento - Savencia
-                        </p> 
-                        <p class="fw-semibold mb-5">
-                            Mar 2025 - Ago 2025 
-                            <span class="work-experience d-block mt-2">
-                                <i>
-                                - Atuação no lançamento de notas fiscais de devolução e pallets em sistema
-                                ERP TOTVS, além do controle de informações por meio de planilhas e comunicação
-                                via e-mail.
-                                </i>
-                            </span>
-                        </p>
-                    </div>
-
-                    <!-- Second job -->
-                    <div class="experience-card pb-2 pb-sm-0">
-                        <p>
-                            <i class="bi bi-laptop"></i></i> Desenvolvedor Junior - Lemar Transportes
-                        </p> 
-                        <p class="fw-semibold mb-5">
-                            Set 2025 - Atualmente
-                            <span class="work-experience d-block mt-2">
-                                <i>
-                                - Atuação no desenvolvimento e implementação de novas funcionalidades para o 
-                                portal interno da empresa, utilizado em ambiente web, contribuindo para a melhoria 
-                                e evolução do sistema.
-                                </i>
-                            </span>
-                        </p>
+                        <div class="container-button pt-5 pb-5" data-aos="zoom-in" data-aos-delay="200">
+                            <a href="https://www.linkedin.com/in/gabriel-almeida-768a59331/"
+                                class="about-button rounded fs-4 py-3 px-4 fw-bold text-center d-block d-sm-inline-block"
+                                target="_blank" rel="noopener">Conecte-se comigo
+                                <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Curses -->
-                <div class="col-12 col-lg-8">
-                    <h1 class="fw-semibold h1-about">Cursos</h1>
+                <!-- Experience + Formation -->
+                <div class="row pt-4 g-5">
 
-                    <div class="accordion accordion-flush mt-2 mb-3 border" id="accordionFlushExample">
+                    <!-- Experience -->
+                    <div class="col-12 col-lg-7">
+                        <h3 class="h1-about fw-semibold fs-2">Experiência</h3>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed fs-4" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
-                                    aria-controls="flush-collapseThree">
-                                    <i class="bi-palette me-2"></i> Desenvolvimento Web - Instituto Muda Brasil
-                                </button>
-                            </h2>
-                            <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body fs-5">
-                                    <p class="subtitle-accordion">Instituto Muda Brasil. Jun 2022 - Dez 2022</p>
-                                    <p class="inside-accordion">Participei do programa Bolsa Tech, com formação em desenvolvimento web, onde 
-                                        adquiri conhecimentos em HTML, CSS, JavaScript e Bootstrap. Durante o curso, 
-                                        desenvolvi páginas web responsivas, utilizei Git para versionamento de código 
-                                        e tive contato com conceitos fundamentais de programação. A experiência também 
-                                        contribuiu para o desenvolvimento de organização, disciplina e preparo para o 
-                                        ambiente profissional.
-                                    </p>
+                        <ol class="timeline">
+                            <li class="timeline-item">
+                                <h4 class="timeline-role">Desenvolvedor Júnior · Lemar Transportes</h4>
+                                <p class="timeline-date"><i class="bi bi-calendar me-2"></i>Set 2025 – atual</p>
+                                <ul class="timeline-tasks">
+                                    <li>Desenvolvimento de novas telas e funcionalidades para o portal web interno da
+                                        empresa, usado no dia a dia das operações.</li>
+                                    <li>Front-end em Angular, TypeScript e PrimeNG, integrado a APIs em C# (.NET).</li>
+                                    <li>Consultas em SQL Server para apoiar o desenvolvimento das funcionalidades.</li>
+                                </ul>
+                            </li>
+
+                            <li class="timeline-item">
+                                <h4 class="timeline-role">Aprendiz de Faturamento · Savencia</h4>
+                                <p class="timeline-date"><i class="bi bi-calendar me-2"></i>Mar 2025 – Ago 2025</p>
+                                <ul class="timeline-tasks">
+                                    <li>Lançamento de notas fiscais de devolução e de pallets no ERP TOTVS.</li>
+                                    <li>Controle de informações em planilhas e comunicação por e-mail.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- Formation -->
+                    <div class="col-12 col-lg-5">
+                        <h3 class="h1-about fw-semibold fs-2">Formação</h3>
+
+                        <div class="formation-card">
+                            <h4 class="timeline-role">Análise e Desenvolvimento de Sistemas</h4>
+                            <p><i class="bi bi-bank pe-2"></i>UNIP</p>
+                            <p><i class="bi bi-calendar pe-2"></i>Fev 2024 – Dez 2025</p>
+                            <p><i class="bi bi-trophy pe-2"></i>Bolsa integral (ProUni)</p>
+                        </div>
+
+                        <div class="formation-card">
+                            <h4 class="timeline-role">Inglês</h4>
+                            <p><i class="bi bi-bank pe-2"></i>Santa Rosa</p>
+                            <p><i class="bi bi-calendar pe-2"></i>Fev 2022 – Mar 2025</p>
+                            <p><i class="bi bi-globe-americas pe-2"></i>Nível intermediário</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Courses -->
+                <div class="row pt-4 pb-4">
+                    <div class="col-12">
+                        <h3 class="h1-about fw-semibold fs-2">Cursos</h3>
+
+                        <div class="accordion accordion-flush mt-3" id="accordionCourses">
+
+                            <div class="accordion-item">
+                                <h4 class="accordion-header">
+                                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#course-database" aria-expanded="false"
+                                        aria-controls="course-database">
+                                        <i class="bi bi-database me-2"></i>Banco de Dados para Data Science · SENAI
+                                    </button>
+                                </h4>
+                                <div id="course-database" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionCourses">
+                                    <div class="accordion-body">
+                                        <p class="subtitle-accordion">SENAI · Fev 2026 – Mar 2026 · 40h</p>
+                                        <p>Modelagem e criação de bancos de dados relacionais no SQL Server, consultas
+                                            SQL, rotinas de backup e recuperação, práticas de segurança e criação de
+                                            visualizações de dados.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h4 class="accordion-header">
+                                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#course-ui" aria-expanded="false" aria-controls="course-ui">
+                                        <i class="bi bi-palette me-2"></i>Designer de Interface Web · SENAI
+                                    </button>
+                                </h4>
+                                <div id="course-ui" class="accordion-collapse collapse" data-bs-parent="#accordionCourses">
+                                    <div class="accordion-body">
+                                        <p class="subtitle-accordion">SENAI · Fev 2025 – Mar 2025 · 60h</p>
+                                        <p>Criação de interfaces com foco em usabilidade e experiência do usuário:
+                                            design visual, organização de layout e boas práticas de UI.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h4 class="accordion-header">
+                                    <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#course-web" aria-expanded="false" aria-controls="course-web">
+                                        <i class="bi bi-code-slash me-2"></i>Desenvolvimento Web · Instituto Muda Brasil
+                                    </button>
+                                </h4>
+                                <div id="course-web" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionCourses">
+                                    <div class="accordion-body">
+                                        <p class="subtitle-accordion">Instituto Muda Brasil · Jun 2022 – Dez 2022</p>
+                                        <p>Programa Bolsa Tech: HTML, CSS, JavaScript e Bootstrap, criação de páginas
+                                            responsivas e versionamento de código com Git.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed fs-4" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                    aria-controls="flush-collapseTwo">
-                                    <i class="bi-code-slash me-2"></i> Designer de Interface Web - SENAI
-                                </button>
-                            </h2>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body fs-5">
-                                    <p class="subtitle-accordion">SENAI. Fev 2025 - Mar 2025 | 60h</p>
-                                    <p>Durante o curso de Designer de Interface Web pelo SENAI, desenvolvi 
-                                        conhecimentos na criação de interfaces digitais com foco em usabilidade 
-                                        e experiência do usuário. Trabalhei com conceitos de design visual, 
-                                        organização de layout e boas práticas de UI, além de utilizar ferramentas 
-                                        atuais do mercado. A formação contribuiu para aprimorar minha capacidade 
-                                        de criar interfaces funcionais, intuitivas e visualmente consistentes.
-                                    </p>
-                                </div>
+        <!-- END ABOUT -->
+
+
+        <!-- SKILLS -->
+
+        <section class="skills container-fluid py-5" id="skills">
+            <div class="container">
+                <h2 class="section-title text-center display-5 fw-bold">Skills</h2>
+                <p class="skills-subtitle text-center fs-5 mt-3">Tecnologias que uso hoje e o que estou estudando agora.</p>
+
+                <div class="row g-4 mt-3">
+
+                    <!-- group frontend -->
+                    <div class="col-12 col-lg-6" data-aos="fade-up">
+                        <div class="skill-group h-100 p-4">
+                            <div class="skill-group-header d-flex align-items-center gap-2">
+                                <i class="bi bi-window"></i>
+                                <h3 class="fs-4 fw-semibold m-0">Frontend</h3>
                             </div>
-                        </div>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed fs-4" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                    aria-controls="flush-collapseOne">
-                                    <i class="bi bi-database me-2"></i>Banco de dados para Data Science - SENAI
-                                </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body fs-5">
-                                    <p class="subtitle-accordion">SENAI. Fev 2026 - Mar 2026 | 40h</p>
-                                    <p>Ao realizar o curso de Banco de Dados para Data Science pelo SENAI, 
-                                        desenvolvi conhecimentos na criação, gerenciamento e manutenção de 
-                                        bancos de dados relacionais utilizando SQL Server. Durante o curso, 
-                                        trabalhei com modelagem e análise de dados, criação de tabelas e consultas 
-                                        SQL, além de rotinas de backup e recuperação de dados. Também tive contato 
-                                        com práticas de segurança, manipulação de dados e criação de visualizações, 
-                                        aplicando conceitos voltados para organização, desempenho e confiabilidade 
-                                        das informações. A experiência contribuiu para fortalecer meu raciocínio 
-                                        lógico e minha capacidade de trabalhar com dados de forma estruturada e eficiente.
-                                    </p>
-                                </div>
+                            <ul class="skill-list">
+                                <li class="skill-chip"><img src="img/skills/angular.png" alt="" width="22" height="22">Angular</li>
+                                <li class="skill-chip"><img src="img/skills/ts.webp" alt="" width="22" height="22">TypeScript</li>
+                                <li class="skill-chip"><img src="img/skills/primeng.png" alt="" width="22" height="22">PrimeNG</li>
+                                <li class="skill-chip"><img src="img/skills/js.webp" alt="" width="22" height="22">JavaScript</li>
+                                <li class="skill-chip"><img src="img/skills/html.webp" alt="" width="22" height="22">HTML</li>
+                                <li class="skill-chip"><img src="img/skills/css.png" alt="" width="22" height="22">CSS</li>
+                                <li class="skill-chip"><img src="img/skills/bootstrap.png" alt="" width="22" height="22">Bootstrap</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- group backend -->
+                    <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="skill-group skill-group-learning h-100 p-4">
+                            <div class="skill-group-header d-flex align-items-center gap-2">
+                                <i class="bi bi-braces"></i>
+                                <h3 class="fs-4 fw-semibold m-0">Backend</h3>
                             </div>
+
+                            <ul class="skill-list">
+                                <li class="skill-chip"><img src="img/skills/python.png" alt="" width="22" height="22">Python</li>
+                                <li class="skill-chip"><img src="img/skills/fastapi.png" alt="" width="22" height="22">FastAPI</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-
-    <!-- END ABOUT -->
-
-
-    <!-- SKILLS -->
-
-    <section class="skills container-fluid my-3 py-4" id="skills">
-        <h1 class="text-center display-5 fw-bold">Skills</h1>
-
-        <div class="container-skills container d-flex text-center mt-5 justify-content-around gap-1 mb-3">
-
-            <!-- card html -->
-            <div class="card-skill p-1 rounded" data-aos="zoom-in">
-                <img src="img/skills/html.webp" alt="Logo HTML" class="skill-logo">
-
-                <h5 class="my-2 fs-4">HTML</h5>
-            </div>
-
-            <!-- card css -->
-            <div class="card-skill p-1 rounded" data-aos="zoom-in" data-aos-delay="200">
-                <img src="img/skills/css.png" alt="Logo CSS" class="skill-logo">
-
-                <h5 class="my-2 fs-4">CSS</h5>
-            </div>
-
-            <!-- card js -->
-            <div class="card-skill p-1 rounded" data-aos="zoom-in" data-aos-delay="250">
-                <img src="img/skills/js.webp" alt="Logo JavaScript" class="skill-logo">
-
-                <h5 class="my-2 fs-4">JavaScript</h5>
-            </div>
-
-            <!-- card ts -->
-            <div class="card-skill p-1 rounded" data-aos="zoom-in" data-aos-delay="350">
-                <img src="img/skills/ts.webp" alt="Logo TypeScript" class="skill-logo p-3">
-
-                <h5 class="my-2 fs-4">TypeScript</h5>
-            </div>
-
-            <!-- card Angular -->
-            <div class="card-skill p-1 rounded" data-aos="zoom-in" data-aos-delay="300">
-                <img src="img/skills/angular.png" alt="Logo Angular" class="skill-logo">
-
-                <h5 class="my-2 fs-4">Angular</h5>
-            </div>
-
-            <!-- card primeng -->
-            <div class="card-skill p-1 rounded" data-aos="zoom-in" data-aos-delay="450">
-                <img src="img/skills/primeng.png" alt="Logo PrimeNG" class="skill-logo p-3">
-
-                <h5 class="my-2 fs-4">PrimeNG</h5>
-            </div>
-
-            <!-- card bootstrap -->
-            <div class="card-skill p-1 rounded" data-aos="zoom-in" data-aos-delay="400">
-                <img src="img/skills/bootstrap.png" alt="Logo BootStrap" class="skill-logo p-3">
-
-                <h5 class="my-2 fs-4">BootStrap</h5>
-            </div>
-
-            <!-- card sql -->
-            <div class="card-skill p-1 rounded" data-aos="zoom-in" data-aos-delay="450">
-                <img src="img/skills/sql.png" alt="Logo SQL Server" class="skill-logo p-3">
-
-                <h5 class="my-2 fs-4">SQL Server</h5>
-            </div>
-        </div>
-    </section>
-
-    <!-- END SKILLS -->
-
-
-
-    <!-- PROJECTS -->
-
-    <section class="projects container-fluid py-3" id="projects">
-        <div class="container py-5">
-            <h1 class="text-center display-5 fw-bold pb-5">Meus Projetos</h1>
-
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gap-5 d-flex justify-content-center"> <!--  -->
-
-
-                <!-- Project 1 -->
-                <div class="card col-12 col-md-12 py-3" style="width: 21rem;">
-                    <span class="badge bg-dark mb-1">Projeto Freelancer – Junho, 2026</span>
-                    <img src="img/projects/project1.PNG" class="card-img-top pt-2 px-2"
-                        alt="Página inicial do meu Projeto Cinema">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">Oficina do Alemão</h5>
-                        <p class="card-text">Projeto real desenvolvido para uma oficina mecânica da cidade de Piranguinho-MG, 
-                            com foco em divulgação dos serviços, geração de contatos via WhatsApp e fortalecimento da presença online.
-                        </p>
-
-                        <div class="d-flex justify-content-between gap-1 pb-3">
-                            <img src="img/skills/html.webp" alt="logo html" class="card-img-skill html-skill"
-                                title="HTML">
-                            <img src="img/skills/css.png" alt="logo css" class="card-img-skill css-skill" title="CSS">
-                            <img src="img/skills/js.webp" alt="logo js" class="card-img-skill js-skill"
-                                title="JavaScript">
-                            <img src="img/skills/bootstrap.png" alt="logo bootstrap" class="card-img-skill boot-skill"
-                                title="BootStrap5">
-                        </div>
-
-                        <div class="mt-auto">
-                            <div class="container-btn-projects d-flex justify-content-between">
-                                <a href="https://gabrielalmeidasil.github.io/oficina-do-alemao/" class="btn btn-projects-p"
-                                    target="_blank">Ver Projeto
-                                    <i class="bi bi-link-45deg"></i>
-                                </a>
-                                <a href="https://github.com/GabrielAlmeidaSil/oficina-do-alemao" class="btn btn-projects-c"
-                                    target="_blank">Ver Código
-                                    <i class="bi bi-code-slash"></i>
-                                </a>
+                    <!-- group database -->
+                    <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-group h-100 p-4">
+                            <div class="skill-group-header d-flex align-items-center gap-2">
+                                <i class="bi bi-database"></i>
+                                <h3 class="fs-4 fw-semibold m-0">Banco de dados</h3>
                             </div>
+
+                            <ul class="skill-list">
+                                <li class="skill-chip"><img src="img/skills/sql.webp" alt="" width="22" height="22">SQL Server</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
 
-                <!-- Project 2 -->
-                <div class="card col-12 col-md-12 py-3" style="width: 21rem;">
-                    <span class="badge bg-dark mb-1">Projeto Pessoal – Julho, 2025</span>
-
-                    <img src="img/projects/project2.PNG" class="card-img-top pt-2 px-2"
-                        alt="Página inicial do meu portfolio">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">Meu Portfólio</h5>
-                        <p class="card-text">Portfólio pessoal responsivo, criado para apresentar minhas habilidades,
-                            projetos e contato profissional. Desenvolvido com foco em performance e experiência do
-                            usuário.
-                        </p>
-
-                        <div class="d-flex justify-content-between gap-1 pb-3">
-                            <img src="img/skills/html.webp" alt="logo html" class="card-img-skill html-skill"
-                                title="HTML">
-                            <img src="img/skills/css.png" alt="logo css" class="card-img-skill css-skill" title="CSS">
-                            <img src="img/skills/js.webp" alt="logo js" class="card-img-skill js-skill"
-                                title="JavaScript">
-                            <img src="img/skills/bootstrap.png" alt="logo bootstrap" class="card-img-skill boot-skill"
-                                title="BootStrap5">
-                        </div>
-
-                        <div class="mt-auto">
-                            <div class="container-btn-projects d-flex justify-content-between pt-1">
-                                <a href="#inicio" class="btn btn-projects-p">Ver Projeto
-                                    <i class="bi bi-link-45deg"></i>
-                                </a>
-                                <a href="https://github.com/GabrielAlmeidaSil/portfolio-gabriel"
-                                    class="btn btn-projects-c" target="_blank">Ver Código
-                                    <i class="bi bi-code-slash"></i>
-                                </a>
+                    <!-- group tools -->
+                    <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-group h-100 p-4">
+                            <div class="skill-group-header d-flex align-items-center gap-2">
+                                <i class="bi bi-tools"></i>
+                                <h3 class="fs-4 fw-semibold m-0">Ferramentas</h3>
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Project 3 -->
-                <div class="card col-12 col-md-12 py-3" style="width: 21rem;">
-                    <span class="badge bg-dark mb-1">Projeto Pessoal – Maio, 2025</span>
-                    <img src="img/projects/project3.PNG" class="card-img-top pt-2 px-2"
-                        alt="Página inicial do meu Projeto Church">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-center">Projeto Church</h5>
-                        <p class="card-text">Página institucional fictícia para uma igreja, com design moderno,
-                            informações organizadas e estilo visual realista para simular um site profissional.
-                        </p>
-
-
-                        <div class="d-flex justify-content-between gap-1 pb-3">
-                            <img src="img/skills/html.webp" alt="logo html" class="card-img-skill html-skill"
-                                title="HTML">
-                            <img src="img/skills/css.png" alt="logo css" class="card-img-skill css-skill" title="CSS">
-                            <img src="img/skills/js.webp" alt="logo js" class="card-img-skill js-skill"
-                                title="JavaScript">
-                            <img src="img/skills/bootstrap.png" alt="logo bootstrap" class="card-img-skill boot-skill"
-                                title="BootStrap5">
-                        </div>
-
-
-                        <div class="mt-auto">
-                            <div class="container-btn-projects d-flex justify-content-between">
-                                <a href="https://gabrielalmeidasil.github.io/church-bootstrap/"
-                                    class="btn btn-projects-p" target="_blank">Ver Projeto
-                                    <i class="bi bi-link-45deg"></i>
-                                </a>
-                                <a href="https://github.com/GabrielAlmeidaSil/church-bootstrap"
-                                    class="btn btn-projects-c" target="_blank">Ver Código
-                                    <i class="bi bi-code-slash"></i>
-                                </a>
-                            </div>
+                            <ul class="skill-list">
+                                <li class="skill-chip"><img src="img/skills/git.png" alt="" width="22" height="22">Git</li>
+                                <li class="skill-chip"><i class="bi bi-github"></i>GitHub</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- END PROJECTS -->
+        <!-- END SKILLS -->
 
 
-    <!-- CONTACT -->
 
-    <section class="contact" id="contact">
-        <div class="container-fluid py-5">
-            <h1 class="text-center display-5 fw-bold">Contato</h1>
-            <div class="line d-block mx-auto"></div>
 
-            <div class="container-contact">
-                <h2 class="text-center display-6 fw-bold pt-5">Entre em Contato</h2>
-                <p class="text-center fs-5">Fico à disposição para conversas, parcerias ou qualquer dúvida que você
-                    possa ter.</p>
+        <!-- CONTACT -->
 
-                <!-- social -->
-                <div class="social-contact d-flex justify-content-center gap-4 mb-3 fs-3">
-                    <a href="https://wa.me/+5511989738214" target="_blank"><i class="bi bi-whatsapp"></i></a>
-                    <a href="https://www.linkedin.com/in/gabriel-almeida-768a59331/" target="_blank"><i
-                            class="bi bi-linkedin"></i></a>
-                    <a href="https://github.com/GabrielAlmeidaSil" target="_blank"><i class="bi bi-github"></i></a>
+        <section class="contact" id="contact">
+            <div class="container-fluid py-5">
+                <h2 class="section-title text-center display-5 fw-bold">Contato</h2>
+                <div class="line d-block mx-auto"></div>
+
+                <div class="container-contact">
+                    <p class="text-center fs-5 pt-4">Fico à disposição para conversas, oportunidades ou qualquer dúvida
+                        que você possa ter.</p>
+
+                    <!-- social -->
+                    <div class="social-contact d-flex justify-content-center gap-4 mb-3 fs-3">
+                        <a href="https://wa.me/+5511989738214" target="_blank" rel="noopener" aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/gabriel-almeida-768a59331/" target="_blank" rel="noopener"
+                            aria-label="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/GabrielAlmeidaSil" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </div>
+
+                    <!-- my email -->
+                    <div class="my-email text-center py-3">
+                        <a href="mailto:gabriel.almesilva@gmail.com" class="btn-email py-2 px-4">
+                            <i class="bi bi-envelope"></i>
+                            gabriel.almesilva@gmail.com
+                        </a>
+                    </div>
+
+
+                    <!-- form -->
+                    <form action="https://formspree.io/f/xwpbzyno" method="post" id="contactForm"
+                        class="form d-block mx-auto p-4 mt-4">
+                        <div class="mb-3">
+                            <label for="nome" class="form-label fw-semibold">Nome</label>
+                            <input type="text" class="form-control" name="Nome" id="nome" placeholder="Digite seu nome"
+                                autocomplete="name" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold">E-mail</label>
+                            <input type="email" class="form-control" name="Email" id="email" placeholder="seu@email.com"
+                                autocomplete="email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="mensagem" class="form-label fw-semibold">Mensagem</label>
+                            <textarea class="text-area form-control" name="Mensagem" id="mensagem" rows="3"
+                                placeholder="Digite sua mensagem" required></textarea>
+                        </div>
+
+                        <!-- honeypot against spam (Formspree) -->
+                        <input type="text" name="_gotcha" class="d-none" tabindex="-1" autocomplete="off">
+
+                        <div class="d-flex align-items-center justify-content-end gap-3 mt-4">
+                            <p id="formStatus" class="form-status m-0 me-auto" role="status" aria-live="polite"></p>
+
+                            <button type="submit" class="btn btn-s fw-semibold fs-5 d-flex align-items-center gap-2">
+                                Enviar <i class="bi bi-send"></i>
+                            </button>
+                        </div>
+                    </form>
+
                 </div>
-
-                <!-- my email -->
-                <div class="my-email text-center py-3">
-                    <a href="mailto:gabriel.almesilva@gmail.com" class="btn-email py-2 px-4">
-                        <i class="bi bi-envelope"></i>
-                        gabriel.almesilva@gmail.com
-                    </a>
-                </div>
-
-
-                <!-- form -->
-                <form action="https://formspree.io/f/xwpbzyno" method="post"
-                    class="form align-items-center d-block mx-auto border p-4 rounded mt-4">
-                    <div class="mb-3">
-                        <label for="nome" class="form-label fw-semibold">Nome</label>
-                        <input type="text" class="form-control" name="Nome" id="nome" placeholder="Digite seu nome"
-                            required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="email" class="form-label fw-semibold">E-mail</label>
-                        <input type="email" class="form-control" name="Email" id="email" placeholder="Seu Email"
-                            required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="mensagem" class="form-label fw-semibold">Mensagem</label>
-                        <textarea class="text-area form-control" name="Mensagem" id="mensagem" rows="3"
-                            placeholder="Digite sua mensagem" required></textarea>
-                    </div>
-
-                    <div class="d-flex justify-content-between mt-4">
-                        <button type="reset" class="btn btn-c fw-semibold fs-5 d-flex gap-2">
-                            Limpar <i class="bi bi-x-lg"></i>
-                        </button>
-
-                        <button type="submit" class="btn btn-s fw-semibold fs-5 d-flex gap-2">
-                            Enviar <i class="bi bi-send"></i>
-                        </button>
-                    </div>
-                </form>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- END CONTACT -->
+        <!-- END CONTACT -->
+
+    </main>
 
     <!-- FOOTER -->
 
     <footer class="footer text-center p-1">
-        <p class="pt-2">© 2026 Gabriel Almeida. Todos os direitos reservados | 
+        <p class="pt-2">© 2026 Gabriel Almeida |
             <i class="bi bi-github"></i><a href="https://github.com/GabrielAlmeidaSil" class="my-name ms-1"
-                target="_blank">GitHub</a> |
-            <a href="#inicio"><i class="bi bi-arrow-up"></i></a> 
+                target="_blank" rel="noopener">GitHub</a> |
+            <a href="#inicio" aria-label="Voltar ao topo"><i class="bi bi-arrow-up"></i></a>
         </p>
     </footer>
 
@@ -621,17 +601,13 @@
     <!-- Import AOS.js -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <script>
-        AOS.init();
-    </script>
-
-    <!-- Import my JS -->
-    <script src="js/script.js"></script>
-
     <!-- Import JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
         </script>
+
+    <!-- Import my JS -->
+    <script src="js/script.js"></script>
 </body>
 
 </html>

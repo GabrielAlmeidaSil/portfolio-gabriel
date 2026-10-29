@@ -1,52 +1,93 @@
-const toggleTheme = document.getElementById("toggleTheme");
 const rootHtml = document.documentElement;
-const accordionHeaders = document.querySelectorAll(".accordion-header");
-const menuLinks = document.querySelectorAll(".menu-link");
+const toggleTheme = document.getElementById("toggleTheme");
+const themeIcon = document.getElementById("themeIcon");
+const menuNav = document.getElementById("menuNav");
+const menuLinks = document.querySelectorAll("#menuNav .nav-link");
+const sections = document.querySelectorAll("main section[id]");
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
 
-function changeTheme () {
-    const currentTheme = rootHtml.getAttribute("data-theme");
+/* Animations (disabled for users who prefer reduced motion) */
+AOS.init({
+    once: true,
+    disable: () => window.matchMedia("(prefers-reduced-motion: reduce)").matches
+});
 
-    currentTheme === "dark" ? rootHtml.setAttribute("data-theme", "light") : rootHtml.setAttribute("data-theme", "dark");
 
-    toggleTheme.classList.toggle("bi-sun");
-    toggleTheme.classList.toggle("bi-moon-stars");
+/* Theme */
+// The initial theme is applied by the inline script in <head>
+function updateThemeButton(theme) {
+    themeIcon.className = theme === "dark" ? "bi bi-sun" : "bi bi-moon-stars";
+    toggleTheme.setAttribute("aria-label", theme === "dark" ? "Ativar tema claro" : "Ativar tema escuro");
 }
 
+function changeTheme() {
+    const newTheme = rootHtml.getAttribute("data-theme") === "dark" ? "light" : "dark";
+
+    rootHtml.setAttribute("data-theme", newTheme);
+    try { localStorage.setItem("theme", newTheme); } catch (e) { }
+
+    themeIcon.classList.add("animate");
+    setTimeout(() => updateThemeButton(newTheme), 400);
+}
+
+updateThemeButton(rootHtml.getAttribute("data-theme"));
 toggleTheme.addEventListener("click", changeTheme);
 // fim função mudar Tema do site
 
-accordionHeaders.forEach(header => {
-    header.addEventListener("click", () => {
-        const accordionItem = header.parentElement;
-        const accordionActive = accordionItem.classList.contains("active");
 
-        accordionActive ? accordionItem.classList.remove("active") : accordionItem.classList.add("active");
-        
-    })
-})
-
-menuLinks.forEach(item => {
-    item.addEventListener("click", () => {
-        menuLinks.forEach(i => i.classList.remove("active"));
-        item.classList.add("active");
-    })
-})
-
-/* Animation icon menu */
-const toggleButton = document.getElementById('toggleTheme');
-    let darkMode = true; 
-
-    toggleButton.addEventListener('click', () => {
-
-        document.documentElement.setAttribute('data-theme', darkMode ? 'light' : 'dark');
-        
-        toggleButton.classList.add('animate');
-        
-        setTimeout(() => {
-            toggleButton.classList.remove('animate');
-            toggleButton.className = darkMode
-                ? 'bi bi-moon'
-                : 'bi bi-sun';
-            darkMode = !darkMode;
-        }, 400);
+/* Menu */
+// Close the mobile menu after choosing a section
+menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        if (menuNav.classList.contains("show")) {
+            bootstrap.Collapse.getOrCreateInstance(menuNav).hide();
+        }
     });
+});
+
+// Highlight the menu link of the section on screen
+const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        menuLinks.forEach(link => {
+            const isCurrent = link.getAttribute("href") === `#${entry.target.id}`;
+            link.classList.toggle("active", isCurrent);
+            isCurrent ? link.setAttribute("aria-current", "true") : link.removeAttribute("aria-current");
+        });
+    });
+}, { rootMargin: "-45% 0px -50% 0px" });
+
+sections.forEach(section => sectionObserver.observe(section));
+
+
+/* Contact form */
+// Sends to Formspree without leaving the page (without JS the form still works normally)
+contactForm.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    const submitButton = contactForm.querySelector("button[type='submit']");
+    submitButton.disabled = true;
+    formStatus.className = "form-status m-0 me-auto";
+    formStatus.textContent = "Enviando...";
+
+    try {
+        const response = await fetch(contactForm.action, {
+            method: "POST",
+            body: new FormData(contactForm),
+            headers: { Accept: "application/json" }
+        });
+
+        if (!response.ok) throw new Error(response.statusText);
+
+        contactForm.reset();
+        formStatus.textContent = "Mensagem enviada! Obrigado pelo contato.";
+        formStatus.classList.add("success");
+    } catch (error) {
+        formStatus.textContent = "Não foi possível enviar. Tente de novo ou me mande um e-mail.";
+        formStatus.classList.add("error");
+    } finally {
+        submitButton.disabled = false;
+    }
+});
