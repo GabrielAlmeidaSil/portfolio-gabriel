@@ -7,15 +7,15 @@ const sections = document.querySelectorAll("main section[id]");
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
 
-/* Animations (disabled for users who prefer reduced motion) */
+/* Animações (AOS) */
 AOS.init({
     once: true,
     disable: () => window.matchMedia("(prefers-reduced-motion: reduce)").matches
 });
 
 
-/* Theme */
-// The initial theme is applied by the inline script in <head>
+/* Tema */
+// o tema inicial já é aplicado pelo script no <head>
 function updateThemeButton(theme) {
     themeIcon.className = theme === "dark" ? "bi bi-sun" : "bi bi-moon-stars";
     toggleTheme.setAttribute("aria-label", theme === "dark" ? "Ativar tema claro" : "Ativar tema escuro");
@@ -37,7 +37,7 @@ toggleTheme.addEventListener("click", changeTheme);
 
 
 /* Menu */
-// Close the mobile menu after choosing a section
+// fecha o menu no celular depois de clicar em um link
 menuLinks.forEach(link => {
     link.addEventListener("click", () => {
         if (menuNav.classList.contains("show")) {
@@ -46,7 +46,7 @@ menuLinks.forEach(link => {
     });
 });
 
-// Highlight the menu link of the section on screen
+// deixa ativo no menu o link da seção que está na tela
 const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (!entry.isIntersecting) return;
@@ -62,8 +62,8 @@ const sectionObserver = new IntersectionObserver(entries => {
 sections.forEach(section => sectionObserver.observe(section));
 
 
-/* Contact form */
-// Sends to Formspree without leaving the page (without JS the form still works normally)
+/* Formulário de contato */
+// envia pro Formspree sem sair da página
 contactForm.addEventListener("submit", async event => {
     event.preventDefault();
 
