@@ -17,7 +17,7 @@
     --bg-section: #0F172A;
     --bg-header: #14213D;
     --bg-card: #111B30;
-    --bg-form: #101218;
+    --bg-form: #0D162B;
 
     --color-title: #F8F8F8;
     --color-text: #E4E6EB;
@@ -234,28 +234,86 @@ header {
     list-style: none;
     margin: 0;
     padding: 0;
-    border-left: 2px solid var(--border-color);
 }
 
 .timeline-item {
-    position: relative;
-    padding: 0 0 2rem 1.75rem;
+    padding-bottom: 2rem;
 }
 
-.timeline-item::before {
+.timeline-positions {
+    list-style: none;
+    margin: 0.5rem 0 0 0.25rem;
+    padding: 0;
+    border-left: 2px solid var(--border-color);
+}
+
+.timeline-position {
+    position: relative;
+    padding: 0 0 1.25rem 1.25rem;
+}
+
+.timeline-position:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-position::before {
     content: "";
     position: absolute;
-    left: -8px;
-    top: 6px;
-    width: 14px;
-    height: 14px;
+    left: -6px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: var(--bg-body);
     border: 2px solid var(--accent);
 }
 
-.timeline-item:first-child::before {
-    background: var(--accent);
+.timeline-position .timeline-role {
+    font-size: 1.05rem;
+}
+
+.timeline-position-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.timeline-position-heading .timeline-role {
+    margin: 0;
+}
+
+@media (max-width: 575.98px) {
+    .timeline-position-heading {
+        flex-wrap: nowrap;
+        gap: 0.35rem;
+    }
+
+    .timeline-position-heading .timeline-role {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .promotion-badge {
+        flex: 0 0 auto;
+        padding: 0.15rem 0.4rem;
+        font-size: 0.68rem;
+    }
+}
+
+.promotion-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-pill);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 .timeline-role {
@@ -272,6 +330,7 @@ header {
 }
 
 .timeline-tasks {
+    list-style-type: circle;
     padding-left: 1.1rem;
     margin: 0;
     line-height: 1.7;
@@ -537,12 +596,26 @@ header {
 }
 
 .social-contact a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
     color: var(--color-text);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
     transition: .3s;
 }
 
+.social-contact {
+    font-size: 1.4rem;
+}
+
 .social-contact a:hover {
-    color: var(--accent);
+    color: var(--color-title);
+    border-color: var(--accent);
+    box-shadow: 0 0 12px var(--accent-glow);
+    transform: translateY(-2px);
 }
 
 .btn-email {
@@ -565,7 +638,7 @@ header {
 }
 
 .form {
-    max-width: 600px;
+    max-width: 700px;
     background-color: var(--bg-form);
     border: 1px solid var(--border-color);
     border-radius: 16px;
@@ -575,8 +648,47 @@ form label {
     color: var(--color-title);
 }
 
+form label i {
+    color: var(--accent);
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.form .form-control {
+    background-color: var(--bg-body);
+    border-color: var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+}
+
+.form .form-control::placeholder {
+    color: var(--color-text-muted);
+    opacity: 0.8;
+}
+
+.form .form-control:focus {
+    background-color: var(--bg-body);
+    border-color: var(--accent);
+    color: var(--color-text);
+    box-shadow: 0 0 0 0.25rem var(--accent-glow);
+}
+
+.form .form-control:autofill {
+    background-color: var(--bg-body) !important;
+    color: var(--color-text) !important;
+}
+
+.form .form-control:-webkit-autofill,
+.form .form-control:-webkit-autofill:hover,
+.form .form-control:-webkit-autofill:focus {
+    background-color: var(--bg-body) !important;
+    color: var(--color-text) !important;
+    -webkit-text-fill-color: var(--color-text);
+    -webkit-box-shadow: 0 0 0 1000px var(--bg-body) inset !important;
+}
+
 .text-area {
-    height: 170px;
+    height: 90px;
     resize: none;
 }
 
