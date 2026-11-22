@@ -446,11 +446,11 @@ header {
 
 /* uma cor diferente pra cada card */
 .projects .col:nth-child(1) .card {
-    border-top: 3px solid #dc3545;
+    border-top: 3px solid #3BAAEC;
 }
 
 .projects .col:nth-child(2) .card {
-    border-top: 3px solid #0d6efd;
+    border-top: 3px solid #dc3545;
 }
 
 .projects .col:nth-child(3) .card {
@@ -473,11 +473,25 @@ header {
     color: var(--color-text-muted);
 }
 
-.project-badge {
-    align-self: flex-start;
+.project-badge,
+.project-status {
     font-size: 0.8rem;
     font-weight: 600;
+}
+
+.project-badge {
+    align-self: flex-start;
     color: var(--accent);
+}
+
+.project-status {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.25;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    background: #36282F;
+    color: #FB6923;
 }
 
 /* botões dos cards de projeto */
