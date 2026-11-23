@@ -30,14 +30,18 @@ jobs:
 
           DATA=$(TZ=America/Sao_Paulo date '+%Y-%m-%d %H:%M:%S')
 
-          echo "# Status do repositorio" > status.md
-          echo "" >> status.md
-          echo "Ultima atualizacao: $DATA" >> status.md
+          
+          echo "# Status do repositorio" > STATUS.md
+          echo "" >> STATUS.md
+          echo "Ultima atualizacao: $DATA" >> STATUS.md
+
 
           git config user.name "GabrielAlmeidaSil"
           git config user.email "gabriel.almesilva@gmail.com"
 
-          git add status.md
+          
+          git add STATUS.md
+
 
           if git diff --cached --quiet; then
             echo "Nenhuma alteracao encontrada."
